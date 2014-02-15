@@ -1,0 +1,10 @@
+package com.Github.Comrod.CodeDay.GravityGame;
+
+public class Game
+{
+	public Game()
+	{
+		
+	}
+	
+}

@@ -1,0 +1,17 @@
+package com.Github.Comrod.CodeDay.GravityGame;
+
+import java.awt.image.*;
+import java.io.IOException;
+import javax.imageio.*;
+
+public class Magnus
+{
+	static BufferedImage image = null;{
+		try {
+			image = ImageIO.read(getClass().getResource("/Users/cormacchester/Desktop/Coding/CodeDay/GravityGame/res/magnus.png"));
+		} catch (IOException e) {
+			System.out.println("Error getting image");
+		}}
+	
+	
+}

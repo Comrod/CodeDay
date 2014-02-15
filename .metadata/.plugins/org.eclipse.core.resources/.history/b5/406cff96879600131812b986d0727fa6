@@ -1,0 +1,13 @@
+package com.Github.Comrod.CodeDay.GravityGame;
+
+import java.awt.event.*;
+
+public class Game extends KeyAdapter
+{
+	public Game()
+	{
+		
+	}
+
+	
+}
