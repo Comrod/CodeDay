@@ -1,0 +1,49 @@
+package com.Github.Comrod.Codeday.MagnusGravity;
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
+public class Game extends JPanel
+{
+	//Frame Width and Height
+	static int WIDTH = 600;
+	static int HEIGHT = 400;
+	
+	Magnus magnus = new Magnus();
+	
+	//Image background;
+	
+	//Get Background
+	BufferedImage background = null;{
+		try {
+			background = ImageIO.read(new URL("http://imgur.com/eoz7j06"));
+			System.out.println("Gotten Background");
+		} catch (IOException e) {
+			System.out.println("Incorrect BackgroundD");
+		}}
+	
+	//Image background = new ImageIcon(this.getClass().getResource("/resources/Face.png")).getImage();
+	
+	public Game()
+	{
+		
+	}
+	
+	public void paint(Graphics g)
+	{
+		super.paint(g);
+		System.out.println("Graphics Painted");
+		g.drawImage(background, 0, 0, null);
+		
+	}
+	
+}
