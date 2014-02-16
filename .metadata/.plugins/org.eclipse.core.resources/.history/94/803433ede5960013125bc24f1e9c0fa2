@@ -84,6 +84,7 @@ public class Magnus
     }
     
     
+    
     public void keyPressed(KeyEvent e)
     {
         int key = e.getKeyCode();

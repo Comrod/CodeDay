@@ -83,7 +83,7 @@ public class Magnus
     	return new Rectangle(x, y, WIDTH, HEIGHT);
     }
     
-    
+    /*
     public void keyPressed(KeyEvent e)
     {
         int key = e.getKeyCode();
@@ -143,6 +143,6 @@ public class Magnus
         if (key == KeyEvent.VK_DOWN)
         {
             dy = 0;
-        }
+        }*/
     }
 }

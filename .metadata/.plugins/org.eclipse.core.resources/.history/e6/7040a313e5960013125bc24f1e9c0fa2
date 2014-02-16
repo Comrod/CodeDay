@@ -90,67 +90,16 @@ public class Game extends JPanel implements ActionListener
 		repaint();
 	}
 	
-	public class TAdapter extends KeyAdapter
+	private class TAdapter extends KeyAdapter
 	{	
 		public void keyReleased(KeyEvent e)
         {
-            //magnus.keyReleased(e);
-			int key = e.getKeyCode();
-			if (key == KeyEvent.VK_LEFT)
-	        {
-				Magnus.dx = 0;
-	        }
-
-	        if (key == KeyEvent.VK_RIGHT)
-	        {
-	        	Magnus.dx = 0;
-	        }
-
-	        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
-	        {
-	        	Magnus. dy = 0;
-	        }
-
-	        if (key == KeyEvent.VK_DOWN)
-	        {
-	        	Magnus.dy = 0;
-	        }               
+            magnus.keyReleased(e);
         }
 		public void keyPressed(KeyEvent e)
         {
 			magnus.keyPressed(e);
             System.out.println("Key Pressed");
-            
-            int key = e.getKeyCode();
-            if (key == KeyEvent.VK_LEFT)
-            {
-                Magnus.moveDirection = 2;
-            	Magnus.dx = -1;
-                System.out.println("Left key pressed");
-            }
-
-            if (key == KeyEvent.VK_RIGHT)
-            {
-            	Magnus.moveDirection = 1;
-            	Magnus.dx = 1;
-                System.out.println("Right key pressed");
-            }
-
-            if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
-            {
-                if (Magnus.jumpLimit <= 2)
-            	{
-                	Magnus.dy = -15;
-            	}
-                
-                System.out.println("Up key or Space bar pressed");
-            }
-
-            if (key == KeyEvent.VK_DOWN)
-            {
-            	Magnus.dy = 1;
-                System.out.println("Down key pressed");
-            }
         }
 		
     }

@@ -114,7 +114,8 @@ public class Game extends JPanel implements ActionListener
 	        if (key == KeyEvent.VK_DOWN)
 	        {
 	        	Magnus.dy = 0;
-	        }               
+	        }
+                       
         }
 		public void keyPressed(KeyEvent e)
         {

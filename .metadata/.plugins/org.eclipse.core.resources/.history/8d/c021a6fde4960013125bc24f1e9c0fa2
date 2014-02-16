@@ -31,8 +31,8 @@ public class Magnus
     static int HEIGHT = 130;
     
     //Limits Magnus to a double jump
-    public static int jumpLimit = 2;
-    public static int jumpLimitReset;
+    public int jumpLimit = 2;
+    public int jumpLimitReset;
     
     //Gravity Vars
     static int acceleration = 1;
@@ -84,7 +84,8 @@ public class Magnus
     }
     
     
-    public void keyPressed(KeyEvent e)
+    
+    (public void keyPressed(KeyEvent e)
     {
         int key = e.getKeyCode();
 

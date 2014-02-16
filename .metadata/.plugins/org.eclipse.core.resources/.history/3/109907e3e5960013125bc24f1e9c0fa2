@@ -95,31 +95,6 @@ public class Game extends JPanel implements ActionListener
 		public void keyReleased(KeyEvent e)
         {
             //magnus.keyReleased(e);
-			int key = e.getKeyCode();
-			if (key == KeyEvent.VK_LEFT)
-	        {
-				Magnus.dx = 0;
-	        }
-
-	        if (key == KeyEvent.VK_RIGHT)
-	        {
-	        	Magnus.dx = 0;
-	        }
-
-	        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
-	        {
-	        	Magnus. dy = 0;
-	        }
-
-	        if (key == KeyEvent.VK_DOWN)
-	        {
-	        	Magnus.dy = 0;
-	        }               
-        }
-		public void keyPressed(KeyEvent e)
-        {
-			magnus.keyPressed(e);
-            System.out.println("Key Pressed");
             
             int key = e.getKeyCode();
             if (key == KeyEvent.VK_LEFT)
@@ -151,6 +126,12 @@ public class Game extends JPanel implements ActionListener
             	Magnus.dy = 1;
                 System.out.println("Down key pressed");
             }
+                       
+        }
+		public void keyPressed(KeyEvent e)
+        {
+			magnus.keyPressed(e);
+            System.out.println("Key Pressed");
         }
 		
     }
