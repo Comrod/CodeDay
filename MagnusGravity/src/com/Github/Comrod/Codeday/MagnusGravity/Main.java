@@ -1,39 +1,66 @@
 package com.Github.Comrod.Codeday.MagnusGravity;
 
+import java.awt.Graphics;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferInt;
+import java.util.*;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Main {
+
+public class Main implements Runnable
+{
 	
 	static JFrame frame = new JFrame();
+	static int WIDTH = 1200;
+	static int HEIGHT = 800;
 	
 	public static JLabel label = new JLabel();
 	
-	public static void main(String[] args)
+	public int tickCount = 0;
+	public static int ticks = 0;
+	public boolean running = false;
+	
+	//Rendering
+	private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
+	private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
+	
+	public Main()
 	{
 		//Frame
-		frame.setSize(Game.WIDTH, Game.HEIGHT);		
+		frame.setSize(WIDTH, HEIGHT);		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
+		frame.setResizable(false);
 		frame.add(label);
-		
+			
 		label.setVisible(true);
 		label.setText("Stuff");
 		label.setLocation(80, 80);
 		label.setSize(10, 30);
-		
-		RunGame();
-		
 	}
 	
-	public static void RunGame()
+	public synchronized void start()
 	{
+		running = true;
+		new Thread(this).start();
+	}
+	
+	public synchronized void stop()
+	{
+		running = false;
+	}
+
+	@Override
+	public void run()
+	{	
 		final Game game = new Game();
 		final Magnus magnus = new Magnus();
+		final Platform platform = new Platform();
 		
 		//Frame
 		frame.add(game);
@@ -41,6 +68,65 @@ public class Main {
 		frame.revalidate();
 		frame.repaint();
 		System.out.println("Game started");
+		
+		long lastTime = System.nanoTime();
+		double nsPerTick = 1000000000D/60D;
+		
+		int frames = 0;
+		
+		long lastTimer = System.currentTimeMillis();
+		double delta = 0;
+		
+		while(running)
+		{
+			long now = System.nanoTime();
+			delta += (now - lastTime)/nsPerTick;
+			lastTime = now;
+			boolean shouldRender = true;
 			
+			while(delta >= 1)
+			{
+				ticks ++;
+				tick();
+				delta -= 1;
+				shouldRender = true;
+			}
+			
+			try {
+				Thread.sleep(2);
+			} catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+			
+			if (shouldRender)
+			{
+				frames ++;
+				//render();
+			}
+			
+			if(System.currentTimeMillis() - lastTimer >= 1000)
+			{
+				lastTimer += 1000;
+				System.out.println("Ticks: " + ticks + ", Frames:" + frames);
+				frames = 0;
+				ticks = 0;
+			}
+		}
+	}
+	
+	public void tick()
+	{
+		tickCount ++;
+		
+		for (int i = 0; i < pixels.length; i++)
+		{
+			pixels[i] = i + tickCount;
+		}
+	}
+	
+	public static void main(String[] args)
+	{
+		new Main().start();
 	}
 }

@@ -1,6 +1,5 @@
 package com.Github.Comrod.Codeday.MagnusGravity;
 
-import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -20,8 +19,8 @@ public class Platform
 	int HEIGHT = 40;
 	
 	//Sets position of platform
-	int xPos;
-	int yPos;
+	static int xPos;
+	static int yPos = 530;
 	
 	static int platformSpeed = -5;
 	
@@ -32,13 +31,6 @@ public class Platform
     	} catch (IOException e) {
     		e.printStackTrace();
     	}
-		
-	}
-	
-	//Draws platform
-	public void paint(Graphics g)
-	{
-		g.drawImage(platform, xPos, yPos, null);
 	}
 	
 	public void platformMovement()
@@ -46,6 +38,11 @@ public class Platform
 		xPos += platformSpeed;
 		Rectangle platformBounds = new Rectangle(xPos, yPos, WIDTH, HEIGHT);
 		//Make intersect if statement
+		
+		if (xPos <= 0 - WIDTH)
+		{
+			xPos = Main.WIDTH;
+		}
 	}
 	
 }
