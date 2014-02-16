@@ -152,6 +152,10 @@ public class Game extends JPanel implements ActionListener
 
 	        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
 	        {
+	            /*if (jumpLimit <= 2)
+	        	{
+	            	dy = -15;
+	        	}*/
 	        	Platform.jumpLimitReset++;
 	        	if (Platform.jumpLimitReset < 3)
 	        	{
