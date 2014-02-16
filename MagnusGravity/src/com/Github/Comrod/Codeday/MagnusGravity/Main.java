@@ -21,7 +21,6 @@ public class Main {
 		frame.setVisible(true);
 		frame.add(label);
 		
-		
 		label.setVisible(true);
 		label.setText("Stuff");
 		label.setLocation(80, 80);
@@ -41,6 +40,7 @@ public class Main {
 		game.setVisible(true);
 		frame.revalidate();
 		frame.repaint();
+		System.out.println("Game started");
 			
 	}
 }

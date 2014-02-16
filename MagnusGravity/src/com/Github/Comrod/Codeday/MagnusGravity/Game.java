@@ -22,10 +22,12 @@ public class Game extends JPanel implements ActionListener
 {
 	private static final long serialVersionUID = 1L;
 	
+	
 	//Frame Width and Height
 	static int WIDTH = 1200;
 	static int HEIGHT = 800;
 	
+	//For Walking Animation
 	private boolean movingRight = true;
 	private boolean movingLeft = true;
 	
@@ -56,10 +58,10 @@ public class Game extends JPanel implements ActionListener
         timer.start();
         
         //Animation Timer Right
-        Timer animationTimerRight = new Timer(250, new ActionListener(){	
+        Timer animationTimerRight = new Timer(200, new ActionListener(){	
             public void actionPerformed(ActionEvent e) {
             	movingRight = !movingRight;
-                Magnus.frameRight = movingRight ? Magnus.magnusStillRight : Magnus.magnusRight;
+                Magnus.frameRight = movingRight ? Magnus.magnusRight : Magnus.magnusStillRight;
                 repaint();
             }
         });
@@ -71,7 +73,7 @@ public class Game extends JPanel implements ActionListener
         Timer animationTimerLeft = new Timer(250, new ActionListener(){	
             public void actionPerformed(ActionEvent e) {
             	movingLeft = !movingLeft;
-                Magnus.frameLeft = movingLeft ? Magnus.magnusStillLeft : Magnus.magnusLeft;
+                Magnus.frameLeft = movingLeft ? Magnus.magnusLeft : Magnus.magnusStillLeft;
                 repaint();
             }
         });

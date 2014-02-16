@@ -9,19 +9,29 @@ import javax.imageio.ImageIO;
 
 public class Magnus
 {
+	//Vars for placement of Magnus
 	private int dx;
 	private int dy;
     private int x;
     private int y;
     
+    //Determines direction for animation
     static int moveDirection = 0;
     
+    //Images for movement animations
     public static BufferedImage magnusStillRight;
     public static BufferedImage magnusStillLeft;
     public static BufferedImage magnusRight;
     public static BufferedImage magnusLeft;
     public static BufferedImage frameRight;
     public static BufferedImage frameLeft;
+    
+    static int WIDTH = 30;
+    static int HEIGHT = 130;
+    
+    //Gravity Vars
+    static int acceleration = 1;
+    static int gravitySpeed = 1;
     
     public Magnus()
     {
@@ -39,7 +49,7 @@ public class Magnus
 
     	//Set Position
     	x = 40;
-    	y = 60;
+    	y = 400;
     }
     
     public void move()
@@ -71,26 +81,31 @@ public class Magnus
         {
             moveDirection = 2;
         	dx = -1;
-            System.out.println("Left button pressed");
+            System.out.println("Left key pressed");
         }
 
         if (key == KeyEvent.VK_RIGHT)
         {
             moveDirection = 1;
         	dx = 1;
-            System.out.println("Right button pressed");
+            System.out.println("Right key pressed");
         }
 
         if (key == KeyEvent.VK_UP)
         {
             dy = -1;
-            System.out.println("Up button pressed");
+            System.out.println("Up key pressed");
         }
 
         if (key == KeyEvent.VK_DOWN)
         {
             dy = 1;
-            System.out.println("Down button pressed");
+            System.out.println("Down key pressed");
+        }
+        if (key == KeyEvent.VK_SPACE)
+        {
+        	dy = -1;
+        	System.out.println("Space bar pressed");
         }
     }
 
@@ -118,6 +133,10 @@ public class Magnus
         if (key == KeyEvent.VK_DOWN)
         {
             dy = 0;
+        }
+        if (key == KeyEvent.VK_SPACE)
+        {
+        	dy = 0;
         }
     }
 }
