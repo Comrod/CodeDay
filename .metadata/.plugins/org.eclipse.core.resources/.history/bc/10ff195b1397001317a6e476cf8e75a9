@@ -12,7 +12,7 @@ public class Platform
 {
 	public static BufferedImage platform;
 	
-	public static int jumpLimit = 0;
+	public static jumpLimit = 0;
 	
 	Random rand = new Random();
 	
@@ -46,7 +46,6 @@ public class Platform
 		{
 			Magnus.dy = 0;
 			System.out.println("On solid ground");
-			jumpLimit = 0;
 		}
 		else
 		{

@@ -146,7 +146,7 @@ public class Game extends JPanel implements ActionListener
 
 	        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
 	        {
-	            if (Platform.jumpLimit < 2)
+	            if (Platform.jumpLimit < 3)
 	        	{
 	            	Magnus.dy = -5;
 	        	}

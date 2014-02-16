@@ -112,11 +112,11 @@ public class Game extends JPanel implements ActionListener
 	}
 	
 	void increaseDifficulty()
-	{
-		double foo = -0.05;
-		Platform.platformSpeed = (float) (foo + Platform.platformSpeed);
-		Magnus.dy = (float) ((-foo) + Magnus.dy);
-		System.out.println("Difficulty Level: " + (-foo));
+	{;
+		int randInt = rand.nextInt(3) + 1;
+		System.out.println("Difficulty Level: " + randInt);
+		Platform.platformSpeed = randInt + Platform.platformSpeed;
+		Magnus.dy = randInt + Magnus.dy;
 	}
 	
 	public void actionPerformed(ActionEvent e)
@@ -146,12 +146,11 @@ public class Game extends JPanel implements ActionListener
 
 	        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
 	        {
-	            if (Platform.jumpLimit < 2)
+	            /*if (jumpLimit <= 2)
 	        	{
-	            	Magnus.dy = -5;
-	        	}
-	            
-	            Platform.jumpLimit ++;
+	            	dy = -15;
+	        	}*/
+	        	Magnus.dy = -10;
 	        	
 	            System.out.println("Up key or Space bar pressed");
 	        }

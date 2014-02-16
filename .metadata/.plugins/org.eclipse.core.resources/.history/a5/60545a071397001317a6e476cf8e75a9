@@ -102,7 +102,7 @@ public class Main implements Runnable
 				platform.platformMovement();
 				
 				//Increase Difficulty
-				game.increaseDifficulty();
+				//game.increaseDifficulty();
 			}
 			
 			try {

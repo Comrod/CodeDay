@@ -146,12 +146,13 @@ public class Game extends JPanel implements ActionListener
 
 	        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
 	        {
-	            if (Platform.jumpLimit < 2)
+	            if (Platform.jumpLimit < 3)
 	        	{
-	            	Magnus.dy = -5;
+	            	Magnus.dy = -15;
 	        	}
 	            
-	            Platform.jumpLimit ++;
+	        	Platform.jumpLimit ++;
+	            Magnus.dy = -10;
 	        	
 	            System.out.println("Up key or Space bar pressed");
 	        }

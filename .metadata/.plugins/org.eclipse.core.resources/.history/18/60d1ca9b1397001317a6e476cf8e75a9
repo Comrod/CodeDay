@@ -46,7 +46,7 @@ public class Platform
 		{
 			Magnus.dy = 0;
 			System.out.println("On solid ground");
-			jumpLimit = 0;
+			jumpLimit ++;
 		}
 		else
 		{
