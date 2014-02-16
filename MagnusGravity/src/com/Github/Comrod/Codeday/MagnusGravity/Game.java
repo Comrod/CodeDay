@@ -22,16 +22,13 @@ public class Game extends JPanel implements ActionListener
 {
 	private static final long serialVersionUID = 1L;
 	
-	//Number of Platforms
-	static int platNum = 4;
-	
 	//For Walking Animation
 	private boolean movingRight = true;
 	private boolean movingLeft = true;
 	
 	Timer timer;
 	Magnus magnus;
-	static Platform [] platformArray = new Platform[platNum];
+	Platform platform;
 	
 	//Get Background
 	BufferedImage background = null;{
@@ -44,20 +41,15 @@ public class Game extends JPanel implements ActionListener
 	
 	public Game()
 	{
-		addKeyListener(new KeyInput(this));
+		addKeyListener(new TAdapter());
 		
 		setFocusable(true);
         setDoubleBuffered(true);
         requestFocusInWindow();
         
         magnus = new Magnus();
+        platform = new Platform();
         
-        //Initialize Platforms
-        for(int i = 0; i < platNum; i++)
-        {
-        	platformArray[i] = new Platform();
-        	System.out.println("Platforms Created");
-        }
         
         //Game Timer
         timer = new Timer(5, this);
@@ -88,7 +80,6 @@ public class Game extends JPanel implements ActionListener
     	animationTimerLeft.start();
         
         System.out.println("Game Intialized");
-        System.out.println("Player Coords: "+ Magnus.x + ", " + Magnus.y);
 	}
 	
 	public void paint(Graphics g)
@@ -113,11 +104,8 @@ public class Game extends JPanel implements ActionListener
 			g.drawImage(Magnus.frameLeft, magnus.getX(), magnus.getY(), this);
 		}
 		
-		//Platforms
-		for(int i = 0; i < platNum; i++)
-        {
-        	platformArray[i].paint(g);
-        }	
+		g.drawImage(Platform.platform, Platform.xPos, Platform.yPos, null);
+		
 	}
 	
 	public void actionPerformed(ActionEvent e)
@@ -126,65 +114,18 @@ public class Game extends JPanel implements ActionListener
 		repaint();
 	}
 	
-	public void keyPressed(KeyEvent e)
+	private class TAdapter extends KeyAdapter
 	{
-		int key = e.getKeyCode();
-
-        if (key == KeyEvent.VK_LEFT)
+		public void keyReleased(KeyEvent e)
         {
-            //moveDirection = 2;
-        	Magnus.dx = -1;
-            System.out.println("Left key pressed");
+            magnus.keyReleased(e);
         }
-
-        if (key == KeyEvent.VK_RIGHT)
+		
+		public void keyPressed(KeyEvent e)
         {
-            //moveDirection = 1;
-        	Magnus.dx = 1;
-            System.out.println("Right key pressed");
+            magnus.keyPressed(e);
+            System.out.println("Key Pressed");
         }
-
-        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
-        {
-            /*if (jumpLimit <= 2)
-        	{
-            	dy = -2;
-        	}*/
-        	Magnus.dy = -2;
-            
-            System.out.println("Up key or Space bar pressed");
-        }
-
-        if (key == KeyEvent.VK_DOWN)
-        {
-        	Magnus.dy = 1;
-            System.out.println("Down key pressed");
-        }
-	}
-	
-	public void keyReleased(KeyEvent e)
-	{
-		int key = e.getKeyCode();
-        //moveDirection = 0;
-        
-        if (key == KeyEvent.VK_LEFT)
-        {
-        	Magnus.dx = 0;
-        }
-
-        if (key == KeyEvent.VK_RIGHT)
-        {
-        	Magnus.dx = 0;
-        }
-
-        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
-        {
-        	Magnus.dy = 0;
-        }
-
-        if (key == KeyEvent.VK_DOWN)
-        {
-        	Magnus.dy = 0;
-        }
-	}
+		
+    }
 }

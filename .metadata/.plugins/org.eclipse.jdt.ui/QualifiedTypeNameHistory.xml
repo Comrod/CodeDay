@@ -6,13 +6,11 @@
 <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.awt.image.BufferStrategy"/>
+<fullyQualifiedTypeName name="java.awt.Graphics"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
 <fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.net.URL"/>
-<fullyQualifiedTypeName name="com.Github.Comrod.Codeday.MagnusGravity.Main"/>
-<fullyQualifiedTypeName name="java.awt.Graphics"/>
-<fullyQualifiedTypeName name="com.Github.Comrod.Codeday.MagnusGravity.Magnus"/>
 </qualifiedTypeNameHistroy>

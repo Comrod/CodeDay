@@ -1,0 +1,15 @@
+package com.Github.Comrod.Codeday.MagnusGravity;
+
+import javax.swing.JPanel;
+
+public class Game extends JPanel
+{
+	static int WIDTH = 600;
+	static int HEIGHT = 400;
+	
+	
+	public Game()
+	{
+		
+	}
+}

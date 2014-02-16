@@ -1,8 +1,0 @@
-package com.Github.Comrod.CodeDay.MagnusGravityDuo;
-
-import java.awt.image.BufferedImage;
-
-public class Game
-{
-	static BufferedImage background;
-}

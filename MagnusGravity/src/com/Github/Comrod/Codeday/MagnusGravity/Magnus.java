@@ -12,7 +12,7 @@ public class Magnus
 {
 	//Vars for placement of Magnus
 	public static int dx;
-	public static float dy;
+	public static int dy;
     public static int x;
     public static int y;
     
@@ -34,6 +34,10 @@ public class Magnus
     public int jumpLimit = 2;
     public int jumpLimitReset;
     
+    //Gravity Vars
+    static int acceleration = 1;
+    static int gravitySpeed = 1;
+    
     public Magnus()
     {
     	//Set Textures
@@ -49,8 +53,16 @@ public class Magnus
     	System.out.println("Gotten Magnus");
 
     	//Set Position
-    	x = 100;
-    	y = 100;
+    	x = 40;
+    	y = 200;
+    }
+    
+    public void gravity()
+    {
+    	/*while (Main.ticks < 30)
+    	{
+    		dy = 1;
+    	}*/
     }
     
     public void move()
@@ -77,5 +89,67 @@ public class Magnus
     public static Rectangle getBounds()
     {
     	return new Rectangle(x, y, WIDTH, HEIGHT);
+    }
+    
+    public void keyPressed(KeyEvent e)
+    {
+        int key = e.getKeyCode();
+
+        if (key == KeyEvent.VK_LEFT)
+        {
+            moveDirection = 2;
+        	dx = -1;
+            System.out.println("Left key pressed");
+        }
+
+        if (key == KeyEvent.VK_RIGHT)
+        {
+            moveDirection = 1;
+        	dx = 1;
+            System.out.println("Right key pressed");
+        }
+
+        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
+        {
+            if (jumpLimit <= 2)
+        	{
+            	dy = -15;
+        	}
+            
+            System.out.println("Up key or Space bar pressed");
+        }
+
+        if (key == KeyEvent.VK_DOWN)
+        {
+            dy = 1;
+            System.out.println("Down key pressed");
+        }
+    }
+
+    public void keyReleased(KeyEvent e)
+    {
+    	System.out.println("Key event initialized");
+        int key = e.getKeyCode();
+        moveDirection = 0;
+        
+        if (key == KeyEvent.VK_LEFT)
+        {
+            dx = 0;
+        }
+
+        if (key == KeyEvent.VK_RIGHT)
+        {
+            dx = 0;
+        }
+
+        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
+        {
+            dy = 0;
+        }
+
+        if (key == KeyEvent.VK_DOWN)
+        {
+            dy = 0;
+        }
     }
 }

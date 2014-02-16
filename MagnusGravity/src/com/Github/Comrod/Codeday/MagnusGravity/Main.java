@@ -25,7 +25,7 @@ public class Main implements Runnable
 	public int tickCount = 0;
 	public static int ticks = 0;
 	public boolean running = false;
-	public static boolean gravityOnOff = false;
+	public static boolean gravityOnOff = true;
 	
 	
 	//Rendering
@@ -64,7 +64,7 @@ public class Main implements Runnable
 	{	
 		final Game game = new Game();
 		final Magnus magnus = new Magnus();
-		Platform platform = new Platform();
+		final Platform platform = new Platform();
 		
 		//Frame
 		frame.add(game);
@@ -95,12 +95,17 @@ public class Main implements Runnable
 				delta -= 1;
 				shouldRender = true;
 				
-				//Gravity, Platform Movement
-				for(int i = 0; i < Game.platNum; i++)
-		        {
-		        	Game.platformArray[i].platformMovement();
-		        	Game.platformArray[i].onSolidGround();
-		        }
+				//GRAVITY GRAVITY - VERY IMPGRAVITY ----ORTANT STUFF HERE, DO NOT MISS
+				platform.onSolidGround();
+				
+				/*else
+				{
+					Magnus.dy = 0;
+					Magnus.y = Platform.yPos - 130;
+				}*/
+				
+				//Platform Movement
+				platform.platformMovement();
 			}
 			
 			try {
