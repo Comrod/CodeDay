@@ -34,10 +34,6 @@ public class Magnus
     public int jumpLimit = 2;
     public int jumpLimitReset;
     
-    //Gravity Vars
-    static int acceleration = 1;
-    static int gravitySpeed = 1;
-    
     public Magnus()
     {
     	//Set Textures
@@ -55,14 +51,6 @@ public class Magnus
     	//Set Position
     	x = 40;
     	y = 200;
-    }
-    
-    public void gravity()
-    {
-    	/*while (Main.ticks < 30)
-    	{
-    		dy = 1;
-    	}*/
     }
     
     public void move()

@@ -22,7 +22,7 @@ public class Main implements Runnable
 	
 	public static JLabel label = new JLabel();
 	
-	public int tickCount = 0;
+	public static int tickCount = 0;
 	public static int ticks = 0;
 	public boolean running = false;
 	public static boolean gravityOnOff = true;
@@ -97,15 +97,12 @@ public class Main implements Runnable
 				
 				//GRAVITY GRAVITY - VERY IMPGRAVITY ----ORTANT STUFF HERE, DO NOT MISS
 				platform.onSolidGround();
-				
-				/*else
-				{
-					Magnus.dy = 0;
-					Magnus.y = Platform.yPos - 130;
-				}*/
-				
+
 				//Platform Movement
 				platform.platformMovement();
+				
+				//Increase Difficulty
+				//game.increaseDifficulty();
 			}
 			
 			try {

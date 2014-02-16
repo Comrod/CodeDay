@@ -22,7 +22,7 @@ public class Platform
 	static int xPos;
 	static int yPos = 530;
 	
-	static int platformSpeed = -5;
+	static float platformSpeed = (float) -1;
 	
 	Platform()
 	{	

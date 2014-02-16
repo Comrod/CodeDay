@@ -11,6 +11,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 
 import javax.swing.Timer;
 import javax.imageio.ImageIO;
@@ -20,6 +21,8 @@ import javax.swing.JPanel;
 
 public class Game extends JPanel implements ActionListener
 {
+	Random rand = new Random();
+	
 	private static final long serialVersionUID = 1L;
 	
 	//For Walking Animation
@@ -108,12 +111,21 @@ public class Game extends JPanel implements ActionListener
 		
 	}
 	
+	void increaseDifficulty()
+	{;
+		int randInt = rand.nextInt(3) + 1;
+		System.out.println("Difficulty Level: " + randInt);
+		Platform.platformSpeed = randInt + Platform.platformSpeed;
+		Magnus.dy = randInt + Magnus.dy;
+	}
+	
 	public void actionPerformed(ActionEvent e)
 	{
 		magnus.move();
 		repaint();
 	}
 	
+	//KEY INPUT --- DO NOT TOUCH OR IT WILL BREAK
 	 public void keyPressed(KeyEvent e)
 	    {
 	        int key = e.getKeyCode();
@@ -142,12 +154,6 @@ public class Game extends JPanel implements ActionListener
 	        	
 	            System.out.println("Up key or Space bar pressed");
 	        }
-
-	        if (key == KeyEvent.VK_DOWN)
-	        {
-	        	Magnus.dy = 1;
-	            System.out.println("Down key pressed");
-	        }
 	    }
 
 	    public void keyReleased(KeyEvent e)
@@ -168,12 +174,7 @@ public class Game extends JPanel implements ActionListener
 
 	        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
 	        {
-	        	Magnus.dy = 0;
-	        }
-
-	        if (key == KeyEvent.VK_DOWN)
-	        {
-	        	Magnus.dy = 0;
+	        	Magnus.dy = (float) 1;
 	        }
 	    }
 }
