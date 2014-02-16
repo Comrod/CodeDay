@@ -1,0 +1,6 @@
+package com.Github.Comrod.Codeday.MagnusGravity;
+
+public class Menu
+{
+	boolean startGame = false;
+}
