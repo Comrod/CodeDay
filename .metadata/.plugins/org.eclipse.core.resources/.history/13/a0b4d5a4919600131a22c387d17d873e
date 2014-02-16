@@ -1,7 +1,0 @@
-package com.Github.Comrod.Codeday.MagnusGravity;
-
-public class Game
-{
-	int WIDTH = 600;
-	int HEIGHT = 400;
-}

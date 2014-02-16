@@ -86,6 +86,8 @@ public class Game extends JPanel implements ActionListener
         System.out.println("Game Intialized");
 	}
 	
+	
+	
 	public void actionPerformed(ActionEvent e)
 	{
 		magnus.move();
