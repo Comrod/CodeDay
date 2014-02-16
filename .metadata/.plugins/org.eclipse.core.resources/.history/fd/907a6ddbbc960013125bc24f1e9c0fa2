@@ -78,12 +78,11 @@ public class Game extends JPanel implements ActionListener
 		if (Magnus.moveDirection == 0)
 		{
 			//Not moving
-			g.drawImage(Magnus.magnusStill, magnus.getX(), magnus.getY(), this);
+			g.drawImage(Magnus.frame, magnus.getX(), magnus.getY(), this);
 		}
 		else if (Magnus.moveDirection == 1)
 		{
 			//Moving Right
-			g.drawImage(Magnus.frame, magnus.getX(), magnus.getY(), this);
 		}
 		else if (Magnus.moveDirection == 2)
 		{

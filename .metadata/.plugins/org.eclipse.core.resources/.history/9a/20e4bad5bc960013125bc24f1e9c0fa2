@@ -92,8 +92,7 @@ public class Magnus
     {
     	System.out.print("Key event initialized");
         int key = e.getKeyCode();
-        moveDirection = 0;
-        
+
         if (key == KeyEvent.VK_LEFT)
         {
             dx = 0;

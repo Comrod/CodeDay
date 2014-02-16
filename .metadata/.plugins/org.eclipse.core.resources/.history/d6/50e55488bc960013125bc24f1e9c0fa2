@@ -14,7 +14,7 @@ public class Magnus
     private int x;
     private int y;
     
-    static int moveDirection = 0;
+    private static int moveDirection = 0;
     
     public static BufferedImage magnusStill;
     public static BufferedImage magnusRight;
@@ -92,8 +92,7 @@ public class Magnus
     {
     	System.out.print("Key event initialized");
         int key = e.getKeyCode();
-        moveDirection = 0;
-        
+
         if (key == KeyEvent.VK_LEFT)
         {
             dx = 0;

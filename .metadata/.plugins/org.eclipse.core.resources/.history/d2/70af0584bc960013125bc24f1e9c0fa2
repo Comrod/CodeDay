@@ -75,22 +75,7 @@ public class Game extends JPanel implements ActionListener
 		//System.out.println("Graphics Painted");
 		g.drawImage(background, 0, 0, null);
 		
-		if (Magnus.moveDirection == 0)
-		{
-			//Not moving
-			g.drawImage(Magnus.magnusStill, magnus.getX(), magnus.getY(), this);
-		}
-		else if (Magnus.moveDirection == 1)
-		{
-			//Moving Right
-			g.drawImage(Magnus.frame, magnus.getX(), magnus.getY(), this);
-		}
-		else if (Magnus.moveDirection == 2)
-		{
-			//Moving Left
-		}
-		
-		
+		g.drawImage(Magnus.frame, magnus.getX(), magnus.getY(), this);
 	}
 	
 	public void actionPerformed(ActionEvent e)
