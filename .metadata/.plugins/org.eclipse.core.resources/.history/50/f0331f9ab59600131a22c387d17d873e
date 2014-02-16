@@ -15,7 +15,7 @@ public class Magnus
     private int y;
     
     public static BufferedImage magnusStill;
-    public static BufferedImage magnusRight;
+    public static BufferedImage magnusright;
     
     public Magnus()
     {
@@ -26,7 +26,7 @@ public class Magnus
     	}
     	
     	try {
-    		magnusRight = ImageIO.read(new URL("http://i.imgur.com/6hxdzAt.png"));
+    		magnusright = ImageIO.read(new URL("http://i.imgur.com/6hxdzAt.png"));
     	} catch (IOException e) {
     		e.printStackTrace();
     	}
@@ -56,7 +56,7 @@ public class Magnus
     
     public BufferedImage getImage()
     {
-    	return magnusStill;
+    	return magnus;
     }
     
     public void keyPressed(KeyEvent e)

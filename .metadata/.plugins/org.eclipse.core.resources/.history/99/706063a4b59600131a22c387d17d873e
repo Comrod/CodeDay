@@ -56,7 +56,7 @@ public class Magnus
     
     public BufferedImage getImage()
     {
-    	return magnusStill;
+    	return magnus;
     }
     
     public void keyPressed(KeyEvent e)

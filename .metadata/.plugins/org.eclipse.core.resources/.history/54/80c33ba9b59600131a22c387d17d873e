@@ -61,7 +61,7 @@ public class Game extends JPanel implements ActionListener
 		super.paint(g);
 		//System.out.println("Graphics Painted");
 		g.drawImage(background, 0, 0, null);
-		g.drawImage(Magnus.magnusStill, magnus.getX(), magnus.getY(), this);
+		g.drawImage(Magnus.magnus, magnus.getX(), magnus.getY(), this);
 	}
 	
 	public void actionPerformed(ActionEvent e)
