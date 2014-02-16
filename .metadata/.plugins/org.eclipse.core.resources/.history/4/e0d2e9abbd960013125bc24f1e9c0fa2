@@ -18,7 +18,6 @@ public class Magnus
     
     public static BufferedImage magnusStill;
     public static BufferedImage magnusRight;
-    public static BufferedImage magnusLeft;
     public static BufferedImage frame;
     
     public Magnus()
@@ -26,7 +25,6 @@ public class Magnus
     	try {
     		magnusStill = ImageIO.read(new URL("http://i.imgur.com/u8cXxLM.png"));
     		magnusRight = ImageIO.read(new URL("http://i.imgur.com/6hxdzAt.png"));
-    		magnusLeft = ImageIO.read(new URL("http://i.imgur.com/TcjDPzV.png"));
     	} catch (IOException e) {
     		e.printStackTrace();
     	}

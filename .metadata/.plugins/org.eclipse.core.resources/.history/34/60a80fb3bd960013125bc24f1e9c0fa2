@@ -89,6 +89,8 @@ public class Game extends JPanel implements ActionListener
 		{
 			//Moving Left
 		}
+		
+		
 	}
 	
 	public void actionPerformed(ActionEvent e)
