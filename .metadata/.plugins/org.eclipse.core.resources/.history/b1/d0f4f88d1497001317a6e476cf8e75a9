@@ -1,6 +1,5 @@
 package com.Github.Comrod.Codeday.MagnusGravity;
 
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -91,9 +90,6 @@ public class Game extends JPanel implements ActionListener
 		super.paint(g);
 		//System.out.println("Graphics Painted");
 		g.drawImage(background, 0, 0, null);
-		
-		g.setFont(new Font("Helvetica", Font.BOLD, 30));
-		g.drawString("Score: " + Platform.score, 550, 150);
 		
 		if (Magnus.moveDirection == 0)
 		{
