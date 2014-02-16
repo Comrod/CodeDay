@@ -31,7 +31,6 @@ public class Game extends JPanel implements ActionListener
 	Timer timer;
 	Magnus magnus;
 	Platform platform;
-	Frame frame;
 	
 	//Get Background
 	
@@ -46,7 +45,6 @@ public class Game extends JPanel implements ActionListener
         
         magnus = new Magnus();
         platform = new Platform();
-        frame = new Frame();
         
         try {
 			background = ImageIO.read(new URL("http://i.imgur.com/9hKYPfK.png"));
@@ -86,8 +84,6 @@ public class Game extends JPanel implements ActionListener
         System.out.println("Game Intialized");
 	}
 	
-	
-	
 	public void actionPerformed(ActionEvent e)
 	{
 		magnus.move();
@@ -95,14 +91,15 @@ public class Game extends JPanel implements ActionListener
 	}
 	
 	private class TAdapter extends KeyAdapter
-	{	
+	{
 		public void keyReleased(KeyEvent e)
         {
             magnus.keyReleased(e);
         }
+		
 		public void keyPressed(KeyEvent e)
         {
-			magnus.keyPressed(e);
+            magnus.keyPressed(e);
             System.out.println("Key Pressed");
         }
 		

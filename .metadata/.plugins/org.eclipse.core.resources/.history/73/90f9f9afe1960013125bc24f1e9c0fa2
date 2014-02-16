@@ -155,6 +155,11 @@ public class Main extends Canvas implements Runnable
 		
 		Graphics g = bs.getDrawGraphics();
 		
+		//g.fillRect(0, 0, getWidth(), getHeight());
+		
+		
+		//g.drawImage(Magnus.image, (WIDTH), (HEIGHT), null);
+		
 		bs.show();
 		
 		g.drawImage(Game.background, 0, 0, null);

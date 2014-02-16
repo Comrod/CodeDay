@@ -155,6 +155,11 @@ public class Main extends Canvas implements Runnable
 		
 		Graphics g = bs.getDrawGraphics();
 		
+		//g.fillRect(0, 0, getWidth(), getHeight());
+		
+		
+		//g.drawImage(Magnus.image, (WIDTH), (HEIGHT), null);
+		
 		bs.show();
 		
 		g.drawImage(Game.background, 0, 0, null);
@@ -177,7 +182,8 @@ public class Main extends Canvas implements Runnable
 		
 		g.drawImage(Platform.platform, Platform.xPos, Platform.yPos, null);
 		
-		//Disposes old textures for new ones
+		//System.out.println("Rendered Textures");
+		
 		g.dispose();
 	}
 	

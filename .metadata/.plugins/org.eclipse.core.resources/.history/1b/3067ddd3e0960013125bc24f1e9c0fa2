@@ -34,8 +34,6 @@ public class Main extends Canvas implements Runnable
 	
 	private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 	
-	Magnus magnus = new Magnus();
-	
 	public Main()
 	{
 		setMinimumSize(new Dimension(WIDTH, HEIGHT));
@@ -66,7 +64,11 @@ public class Main extends Canvas implements Runnable
 	
 	public void run()
 	{
+		
+
 		final Game game = new Game();
+		final Magnus magnus = new Magnus();
+		final Platform platform = new Platform();
 		
 		//Frame
 		frame.add(game);
@@ -129,7 +131,8 @@ public class Main extends Canvas implements Runnable
 				System.out.println("Ticks: " + ticks + ", Frames:" + frames);
 				frames = 0;
 				ticks = 0;
-			}	
+			}
+			
 		}
 	}
 	
@@ -155,30 +158,14 @@ public class Main extends Canvas implements Runnable
 		
 		Graphics g = bs.getDrawGraphics();
 		
-		bs.show();
+		g.setColor(Color.BLUE);
+		g.fillRect(0, 0, getWidth(), getHeight());
 		
-		g.drawImage(Game.background, 0, 0, null);
 		
-		if (Magnus.moveDirection == 0)
-		{
-			//Not moving
-			g.drawImage(Magnus.magnusStillRight, magnus.getX(), magnus.getY(), this);
-		}
-		else if (Magnus.moveDirection == 1)
-		{
-			//Moving Right
-			g.drawImage(Magnus.frameRight, magnus.getX(), magnus.getY(), this);
-		}
-		else if (Magnus.moveDirection == 2)
-		{
-			//Moving Left
-			g.drawImage(Magnus.frameLeft, magnus.getX(), magnus.getY(), this);
-		}
+		//g.drawImage(Magnus.image, (WIDTH), (HEIGHT), null);
 		
-		g.drawImage(Platform.platform, Platform.xPos, Platform.yPos, null);
-		
-		//Disposes old textures for new ones
 		g.dispose();
+		bs.show();
 	}
 	
 	public static void main(String[] args)

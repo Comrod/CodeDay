@@ -86,8 +86,6 @@ public class Game extends JPanel implements ActionListener
         System.out.println("Game Intialized");
 	}
 	
-	
-	
 	public void actionPerformed(ActionEvent e)
 	{
 		magnus.move();
@@ -95,14 +93,15 @@ public class Game extends JPanel implements ActionListener
 	}
 	
 	private class TAdapter extends KeyAdapter
-	{	
+	{
 		public void keyReleased(KeyEvent e)
         {
             magnus.keyReleased(e);
         }
+		
 		public void keyPressed(KeyEvent e)
         {
-			magnus.keyPressed(e);
+            magnus.keyPressed(e);
             System.out.println("Key Pressed");
         }
 		

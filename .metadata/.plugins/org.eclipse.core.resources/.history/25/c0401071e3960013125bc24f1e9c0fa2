@@ -38,6 +38,7 @@ public class Game extends JPanel implements ActionListener
 	
 	public Game()
 	{
+		
 		addKeyListener(new TAdapter());
 		
 		setFocusable(true);

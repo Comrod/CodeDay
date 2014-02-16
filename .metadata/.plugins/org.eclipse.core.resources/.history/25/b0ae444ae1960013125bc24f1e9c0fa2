@@ -129,7 +129,8 @@ public class Main extends Canvas implements Runnable
 				System.out.println("Ticks: " + ticks + ", Frames:" + frames);
 				frames = 0;
 				ticks = 0;
-			}	
+			}
+			
 		}
 	}
 	
@@ -155,6 +156,12 @@ public class Main extends Canvas implements Runnable
 		
 		Graphics g = bs.getDrawGraphics();
 		
+		g.fillRect(0, 0, getWidth(), getHeight());
+		
+		
+		//g.drawImage(Magnus.image, (WIDTH), (HEIGHT), null);
+		
+		g.dispose();
 		bs.show();
 		
 		g.drawImage(Game.background, 0, 0, null);
@@ -177,8 +184,7 @@ public class Main extends Canvas implements Runnable
 		
 		g.drawImage(Platform.platform, Platform.xPos, Platform.yPos, null);
 		
-		//Disposes old textures for new ones
-		g.dispose();
+		System.out.println("Rendered Textures");
 	}
 	
 	public static void main(String[] args)
