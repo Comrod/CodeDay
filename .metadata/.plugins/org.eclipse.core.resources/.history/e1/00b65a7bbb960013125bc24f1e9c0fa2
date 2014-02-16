@@ -26,10 +26,20 @@ public class Game extends JPanel implements ActionListener
 	static int WIDTH = 600;
 	static int HEIGHT = 400;
 	
-	private boolean movingRight = true;
-	
 	Timer timer;
 	Magnus magnus;
+	
+	Timer animationTimer = new Timer(500, new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            opened = !opened;
+            frame = opened ? pacOpened : pacClosed;
+            repaint();
+        }
+    });
+	animationTimer.setRepeats(true);
+	animationTimer.setCoalesce(true);
+	animationTimer.start();
 	
 	//Get Background
 	BufferedImage background = null;{
@@ -50,21 +60,8 @@ public class Game extends JPanel implements ActionListener
         
         magnus = new Magnus();
         
-        //Game Timer
         timer = new Timer(5, this);
         timer.start();
-        
-        //Animation Timer
-        Timer animationTimer = new Timer(250, new ActionListener(){	
-            public void actionPerformed(ActionEvent e) {
-            	movingRight = !movingRight;
-                Magnus.frame = movingRight ? Magnus.magnusStill : Magnus.magnusRight;
-                repaint();
-            }
-        });
-    	animationTimer.setRepeats(true);
-    	animationTimer.setCoalesce(true);
-    	animationTimer.start();
         
         System.out.println("Game Intialized");
 	}
@@ -74,8 +71,7 @@ public class Game extends JPanel implements ActionListener
 		super.paint(g);
 		//System.out.println("Graphics Painted");
 		g.drawImage(background, 0, 0, null);
-		
-		g.drawImage(Magnus.frame, magnus.getX(), magnus.getY(), this);
+		g.drawImage(Magnus.magnusStill, magnus.getX(), magnus.getY(), this);
 	}
 	
 	public void actionPerformed(ActionEvent e)
@@ -90,6 +86,11 @@ public class Game extends JPanel implements ActionListener
         {
             magnus.keyReleased(e);
         }
+		
+		public void stuff()
+		{
+			System.out.println("Stuff");
+		}
 		
 		public void keyPressed(KeyEvent e)
         {

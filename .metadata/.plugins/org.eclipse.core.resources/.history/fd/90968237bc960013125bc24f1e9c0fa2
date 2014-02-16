@@ -55,7 +55,7 @@ public class Game extends JPanel implements ActionListener
         timer.start();
         
         //Animation Timer
-        Timer animationTimer = new Timer(250, new ActionListener(){	
+        Timer animationTimer = new Timer(500, new ActionListener(){	
             public void actionPerformed(ActionEvent e) {
             	movingRight = !movingRight;
                 Magnus.frame = movingRight ? Magnus.magnusStill : Magnus.magnusRight;
@@ -75,7 +75,7 @@ public class Game extends JPanel implements ActionListener
 		//System.out.println("Graphics Painted");
 		g.drawImage(background, 0, 0, null);
 		
-		g.drawImage(Magnus.frame, magnus.getX(), magnus.getY(), this);
+		g.drawImage(Magnus.magnusStill, magnus.getX(), magnus.getY(), this);
 	}
 	
 	public void actionPerformed(ActionEvent e)

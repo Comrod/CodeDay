@@ -55,7 +55,7 @@ public class Game extends JPanel implements ActionListener
         timer.start();
         
         //Animation Timer
-        Timer animationTimer = new Timer(250, new ActionListener(){	
+        Timer animationTimer = new Timer(300, new ActionListener(){	
             public void actionPerformed(ActionEvent e) {
             	movingRight = !movingRight;
                 Magnus.frame = movingRight ? Magnus.magnusStill : Magnus.magnusRight;

@@ -14,11 +14,10 @@ public class Magnus
     private int x;
     private int y;
     
-    private static int moveDirection = 0;
+    private static int moveDirection;
     
     public static BufferedImage magnusStill;
     public static BufferedImage magnusRight;
-    public static BufferedImage frame;
     
     public Magnus()
     {

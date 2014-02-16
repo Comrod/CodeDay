@@ -14,16 +14,20 @@ public class Magnus
     private int x;
     private int y;
     
-    private static int moveDirection = 0;
+    private static int moveDirection;
     
     public static BufferedImage magnusStill;
     public static BufferedImage magnusRight;
-    public static BufferedImage frame;
     
     public Magnus()
     {
     	try {
     		magnusStill = ImageIO.read(new URL("http://i.imgur.com/u8cXxLM.png"));
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	}
+    	
+    	try {
     		magnusRight = ImageIO.read(new URL("http://i.imgur.com/6hxdzAt.png"));
     	} catch (IOException e) {
     		e.printStackTrace();
@@ -63,15 +67,13 @@ public class Magnus
 
         if (key == KeyEvent.VK_LEFT)
         {
-            moveDirection = 2;
-        	dx = -1;
+            dx = -1;
             System.out.println("Left button pressed");
         }
 
         if (key == KeyEvent.VK_RIGHT)
         {
-            moveDirection = 1;
-        	dx = 1;
+            dx = 1;
             System.out.println("Right button pressed");
         }
 

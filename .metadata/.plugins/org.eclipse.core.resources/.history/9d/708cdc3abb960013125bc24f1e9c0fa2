@@ -14,16 +14,20 @@ public class Magnus
     private int x;
     private int y;
     
-    private static int moveDirection = 0;
+    private static int moveDirection;
     
     public static BufferedImage magnusStill;
     public static BufferedImage magnusRight;
-    public static BufferedImage frame;
     
     public Magnus()
     {
     	try {
     		magnusStill = ImageIO.read(new URL("http://i.imgur.com/u8cXxLM.png"));
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	}
+    	
+    	try {
     		magnusRight = ImageIO.read(new URL("http://i.imgur.com/6hxdzAt.png"));
     	} catch (IOException e) {
     		e.printStackTrace();
