@@ -37,21 +37,29 @@ public class Platform
 		
 	}
 	
-	public void platformMovement()
+	void onSolidGround()
 	{
-		xPos += platformSpeed;
 		Rectangle platformBounds = new Rectangle(xPos, yPos, WIDTH, HEIGHT);
-		//Make intersect if statement
 		if (platformBounds.intersects(Magnus.getBounds()))
 		{
-			Magnus.y = yPos - 130;
-			System.out.println("Intersection");
+			Magnus.dy = 0;
+			System.out.println("On solid ground");
 		}
-		
+		else
+		{
+			Magnus.dy += 1;
+			System.out.println("Not on solid ground");
+		}
+	}
+	
+	public void platformMovement()
+	{
+		xPos += platformSpeed;	
 		if (xPos <= 0 - WIDTH)
 		{
 			xPos = Main.WIDTH;
 		}
+		System.out.println("Platforms are moving");
 	}
 	
 }

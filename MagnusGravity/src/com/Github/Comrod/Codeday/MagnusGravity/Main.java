@@ -27,9 +27,10 @@ public class Main implements Runnable
 	public boolean running = false;
 	public static boolean gravityOnOff = true;
 	
+	
 	//Rendering
-	private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
-	private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
+	//private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
+	//private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 	
 	public Main()
 	{
@@ -94,16 +95,17 @@ public class Main implements Runnable
 				delta -= 1;
 				shouldRender = true;
 				
-				//GRAVITY GRAVITY GRAVITY ----- VERY IMPORTANT STUFF HERE, DO NOT MISS
-				if (Magnus.y < Platform.yPos - 130)
-				{
-					Magnus.dy += 1;
-				}
-				else
+				//GRAVITY GRAVITY - VERY IMPGRAVITY ----ORTANT STUFF HERE, DO NOT MISS
+				platform.onSolidGround();
+				
+				/*else
 				{
 					Magnus.dy = 0;
 					Magnus.y = Platform.yPos - 130;
-				}
+				}*/
+				
+				//Platform Movement
+				platform.platformMovement();
 			}
 			
 			try {
@@ -133,10 +135,10 @@ public class Main implements Runnable
 	{
 		tickCount ++;
 		
-		for (int i = 0; i < pixels.length; i++)
+		/*for (int i = 0; i < pixels.length; i++)
 		{
 			pixels[i] = i + tickCount;
-		}
+		}*/
 	}
 	
 	/*public void render()
