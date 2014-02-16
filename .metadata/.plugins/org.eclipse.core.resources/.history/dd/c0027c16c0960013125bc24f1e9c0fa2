@@ -23,8 +23,8 @@ public class Game extends JPanel implements ActionListener
 	private static final long serialVersionUID = 1L;
 	
 	//Frame Width and Height
-	static int WIDTH = 1200;
-	static int HEIGHT = 800;
+	static int WIDTH = 600;
+	static int HEIGHT = 400;
 	
 	private boolean movingRight = true;
 	private boolean movingLeft = true;
@@ -35,7 +35,7 @@ public class Game extends JPanel implements ActionListener
 	//Get Background
 	BufferedImage background = null;{
 		try {
-			background = ImageIO.read(new URL("http://i.imgur.com/9hKYPfK.png"));
+			background = ImageIO.read(new URL("http://i.imgur.com/YXlnj1g.png"));
 			System.out.println("Gotten Background");
 		} catch (IOException e) {
 			System.out.println("Incorrect Background");

@@ -1,0 +1,14 @@
+package com.Github.Comrod.Codeday.MagnusGravity;
+
+import java.awt.image.BufferedImage;
+
+public class Platform
+{
+	public static BufferedImage platform;
+	
+	Platform()
+	{
+		
+	}
+	
+}
