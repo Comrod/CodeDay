@@ -1,6 +1,7 @@
 package com.Github.Comrod.Codeday.MagnusGravity;
 
 import java.awt.Rectangle;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;

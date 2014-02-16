@@ -1,5 +1,12 @@
 package com.Github.Comrod.Codeday.MagnusGravity;
 
+import java.awt.Graphics;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferInt;
+import java.util.*;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -56,6 +63,7 @@ public class Main implements Runnable
 	public void run()
 	{	
 		final Game game = new Game();
+		final Magnus magnus = new Magnus();
 		final Platform platform = new Platform();
 		
 		//Frame
