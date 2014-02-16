@@ -121,7 +121,7 @@ public class Board extends JFrame
         getContentPane().add(button, BorderLayout.PAGE_END);
     }
      
-    public Board(String name) {
+    public KeyEventDemo(String name) {
         super(name);
     }
      

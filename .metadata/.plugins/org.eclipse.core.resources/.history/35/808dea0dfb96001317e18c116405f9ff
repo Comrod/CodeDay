@@ -1,0 +1,9 @@
+package com.Github.Comrod.CodeDay.MagnusGravityDuo;
+
+import javax.swing.JButton;
+
+public class Menu
+{
+	public JButton startButton;
+	
+}
