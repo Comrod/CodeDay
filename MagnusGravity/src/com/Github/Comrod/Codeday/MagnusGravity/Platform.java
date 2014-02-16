@@ -1,5 +1,6 @@
 package com.Github.Comrod.Codeday.MagnusGravity;
 
+import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -19,10 +20,10 @@ public class Platform
 	int HEIGHT = 40;
 	
 	//Sets position of platform
-	static int xPos;
-	static int yPos = rand.nextInt(Main.HEIGHT - 400) + 1;
+	private int xPos = rand.nextInt(1000) + 200;
+	private int yPos = rand.nextInt(800) + 600;
 	
-	static int platformSpeed = -4;
+	static int platformSpeed = -7;
 	
 	
 	Platform()
@@ -47,18 +48,24 @@ public class Platform
 		}
 		else
 		{
-			Magnus.dy += 1;
+			Magnus.dy += 0.01;
 			System.out.println("Not on solid ground");
 		}
 	}
+	
+	public void paint(Graphics g)
+	{
+		g.drawImage(Platform.platform, xPos, yPos, null);
+	}
+	
 	
 	public void platformMovement()
 	{
 		xPos += platformSpeed;
 		if (xPos <= 0 - WIDTH)
 		{
-			xPos = Main.WIDTH;
-			yPos = rand.nextInt(Main.HEIGHT - 400) + 1;
+			xPos = rand.nextInt(1000) + 1;
+			yPos = rand.nextInt(800) + 600;
 		}
 		System.out.println("Platforms are moving");
 	}

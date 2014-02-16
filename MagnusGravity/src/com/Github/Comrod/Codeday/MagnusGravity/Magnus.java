@@ -12,7 +12,7 @@ public class Magnus
 {
 	//Vars for placement of Magnus
 	public static int dx;
-	public static int dy;
+	public static float dy;
     public static int x;
     public static int y;
     

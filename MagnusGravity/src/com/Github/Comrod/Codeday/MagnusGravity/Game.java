@@ -22,13 +22,16 @@ public class Game extends JPanel implements ActionListener
 {
 	private static final long serialVersionUID = 1L;
 	
+	//Number of Platforms
+	static int platNum = 4;
+	
 	//For Walking Animation
 	private boolean movingRight = true;
 	private boolean movingLeft = true;
 	
 	Timer timer;
 	Magnus magnus;
-	Platform platform;
+	static Platform [] platformArray = new Platform[platNum];
 	
 	//Get Background
 	BufferedImage background = null;{
@@ -48,8 +51,13 @@ public class Game extends JPanel implements ActionListener
         requestFocusInWindow();
         
         magnus = new Magnus();
-        platform = new Platform();
         
+        //Initialize Platforms
+        for(int i = 0; i < platNum; i++)
+        {
+        	platformArray[i] = new Platform();
+        	System.out.println("Platforms Created");
+        }
         
         //Game Timer
         timer = new Timer(5, this);
@@ -105,8 +113,10 @@ public class Game extends JPanel implements ActionListener
 		}
 		
 		//Platforms
-		g.drawImage(Platform.platform, Platform.xPos, Platform.yPos, null);
-		
+		for(int i = 0; i < platNum; i++)
+        {
+        	platformArray[i].paint(g);
+        }	
 	}
 	
 	public void actionPerformed(ActionEvent e)
