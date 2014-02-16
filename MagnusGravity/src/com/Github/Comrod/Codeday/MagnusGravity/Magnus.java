@@ -53,14 +53,6 @@ public class Magnus
     	y = 100;
     }
     
-    public void gravity()
-    {
-    	/*while (Main.ticks < 30)
-    	{
-    		dy = 1;
-    	}*/
-    }
-    
     public void move()
     {
     	x += dx;
@@ -85,67 +77,5 @@ public class Magnus
     public static Rectangle getBounds()
     {
     	return new Rectangle(x, y, WIDTH, HEIGHT);
-    }
-    
-    public void keyPressed(KeyEvent e)
-    {
-        int key = e.getKeyCode();
-
-        if (key == KeyEvent.VK_LEFT)
-        {
-            moveDirection = 2;
-        	dx = -1;
-            System.out.println("Left key pressed");
-        }
-
-        if (key == KeyEvent.VK_RIGHT)
-        {
-            moveDirection = 1;
-        	dx = 1;
-            System.out.println("Right key pressed");
-        }
-
-        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
-        {
-            if (jumpLimit <= 2)
-        	{
-            	dy = -2;
-        	}
-            
-            System.out.println("Up key or Space bar pressed");
-        }
-
-        if (key == KeyEvent.VK_DOWN)
-        {
-            dy = 1;
-            System.out.println("Down key pressed");
-        }
-    }
-
-    public void keyReleased(KeyEvent e)
-    {
-    	System.out.println("Key event initialized");
-        int key = e.getKeyCode();
-        moveDirection = 0;
-        
-        if (key == KeyEvent.VK_LEFT)
-        {
-            dx = 0;
-        }
-
-        if (key == KeyEvent.VK_RIGHT)
-        {
-            dx = 0;
-        }
-
-        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
-        {
-            dy = 0;
-        }
-
-        if (key == KeyEvent.VK_DOWN)
-        {
-            dy = 0;
-        }
     }
 }

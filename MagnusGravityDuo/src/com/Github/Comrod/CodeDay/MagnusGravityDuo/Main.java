@@ -4,9 +4,14 @@ package com.Github.Comrod.CodeDay.MagnusGravityDuo;
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -17,7 +22,9 @@ public class Main implements Runnable
    final int WIDTH = 1200;
    final int HEIGHT = 800;
    
-   Game game;
+   Magnus magnus;
+   
+   static BufferedImage background;
    
    JFrame frame;
    Canvas canvas;
@@ -30,12 +37,14 @@ public class Main implements Runnable
       panel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
       panel.setLayout(null);
       
+      
       canvas = new Canvas();
       canvas.setBounds(0, 0, WIDTH, HEIGHT);
       canvas.setIgnoreRepaint(true);
       
       panel.add(canvas);
       
+      canvas.addKeyListener(new KeyInput(this));
       canvas.addMouseListener(new MouseControl());
       
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,8 +56,15 @@ public class Main implements Runnable
       bufferStrategy = canvas.getBufferStrategy();
       
       canvas.requestFocus();
+      
+      //Get Textures
+      try {
+			background = ImageIO.read(new URL("http://i.imgur.com/9hKYPfK.png"));
+			System.out.println("Recieved Textures");
+		} catch (IOException e) {
+			System.out.println("Incorrect Textures");
+		}
    }
-   
         
    private class MouseControl extends MouseAdapter
    {
@@ -62,8 +78,9 @@ public class Main implements Runnable
    
    public void run()
    {
-      game = new Game();
-	   
+	  
+      magnus = new Magnus();
+      
       long beginLoopTime;
       long endLoopTime;
       long currentUpdateTime = System.nanoTime();
@@ -71,7 +88,8 @@ public class Main implements Runnable
       long deltaLoop;
       
       while(running){
-         beginLoopTime = System.nanoTime();
+         
+    	  beginLoopTime = System.nanoTime();
          
          render();
          
@@ -122,9 +140,55 @@ public class Main implements Runnable
    protected void render(Graphics2D g)
    {
       //g.fillRect((int)x, 0, 200, 200);
-	   g.drawImage(Game.background, 0, 0, null);
+	   g.drawImage(background, 0, 0, null);
+	   g.drawImage(Magnus.magnusRight, 40, 40, null);
 	   
    }
+   
+   //Get Key Inputs
+   public void keyPressed(KeyEvent e)
+	{
+		int key = e.getKeyCode();
+		
+		if (key == KeyEvent.VK_RIGHT)
+		{
+			Magnus.dxPos =+1;
+		}
+		else if (key == KeyEvent.VK_LEFT)
+		{
+			Magnus.dxPos =-1;
+		}
+		else if (key == KeyEvent.VK_UP)
+		{
+			Magnus.dyPos =-1;
+		}
+		else if (key == KeyEvent.VK_DOWN)
+		{
+			Magnus.dyPos =+  1;
+		}
+	}
+	
+	public void keyReleased(KeyEvent e)
+	{
+		int key = e.getKeyCode();
+		
+		if (key == KeyEvent.VK_RIGHT)
+		{
+			Magnus.dxPos = 0;
+		}
+		else if (key == KeyEvent.VK_LEFT)
+		{
+			
+		}
+		else if (key == KeyEvent.VK_UP)
+		{
+			
+		}
+		else if (key == KeyEvent.VK_DOWN)
+		{
+			
+		}
+	}
    
    public static void main(String [] args){
       Main ex = new Main();

@@ -1,0 +1,8 @@
+package com.Github.Comrod.CodeDay.MagnusGravityDuo;
+
+import java.awt.event.KeyAdapter;
+
+public class KeyInput extends KeyAdapter
+{
+
+}

@@ -44,7 +44,7 @@ public class Game extends JPanel implements ActionListener
 	
 	public Game()
 	{
-		addKeyListener(new TAdapter());
+		addKeyListener(new KeyInput(this));
 		
 		setFocusable(true);
         setDoubleBuffered(true);
@@ -126,18 +126,65 @@ public class Game extends JPanel implements ActionListener
 		repaint();
 	}
 	
-	private class TAdapter extends KeyAdapter
+	public void keyPressed(KeyEvent e)
 	{
-		public void keyReleased(KeyEvent e)
+		int key = e.getKeyCode();
+
+        if (key == KeyEvent.VK_LEFT)
         {
-            magnus.keyReleased(e);
+            //moveDirection = 2;
+        	Magnus.dx = -1;
+            System.out.println("Left key pressed");
         }
-		
-		public void keyPressed(KeyEvent e)
+
+        if (key == KeyEvent.VK_RIGHT)
         {
-            magnus.keyPressed(e);
-            System.out.println("Key Pressed");
+            //moveDirection = 1;
+        	Magnus.dx = 1;
+            System.out.println("Right key pressed");
         }
-		
-    }
+
+        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
+        {
+            /*if (jumpLimit <= 2)
+        	{
+            	dy = -2;
+        	}*/
+        	Magnus.dy = -2;
+            
+            System.out.println("Up key or Space bar pressed");
+        }
+
+        if (key == KeyEvent.VK_DOWN)
+        {
+        	Magnus.dy = 1;
+            System.out.println("Down key pressed");
+        }
+	}
+	
+	public void keyReleased(KeyEvent e)
+	{
+		int key = e.getKeyCode();
+        //moveDirection = 0;
+        
+        if (key == KeyEvent.VK_LEFT)
+        {
+        	Magnus.dx = 0;
+        }
+
+        if (key == KeyEvent.VK_RIGHT)
+        {
+        	Magnus.dx = 0;
+        }
+
+        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
+        {
+        	Magnus.dy = 0;
+        }
+
+        if (key == KeyEvent.VK_DOWN)
+        {
+        	Magnus.dy = 0;
+        }
+	}
 }

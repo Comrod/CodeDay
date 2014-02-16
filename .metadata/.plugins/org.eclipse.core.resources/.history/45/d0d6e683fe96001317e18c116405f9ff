@@ -1,0 +1,16 @@
+package com.Github.Comrod.CodeDay.MagnusGravityDuo;
+
+import java.awt.event.KeyAdapter;
+
+public class KeyInput extends KeyAdapter
+{
+	public void keyPressed(KeyEvent e)
+	{
+		
+	}
+	
+	public void keyReleased(KeyEvent e)
+	{
+		
+	}
+}
