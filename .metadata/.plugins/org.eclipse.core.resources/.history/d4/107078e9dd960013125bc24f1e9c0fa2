@@ -139,7 +139,7 @@ public class Main implements Runnable
 		}
 	}
 	
-	/*public void render()
+	public void render()
 	{
 		BufferStrategy bs = getBufferStrategy();
 		if (bs == null)
@@ -147,12 +147,11 @@ public class Main implements Runnable
 			createBufferStrategy(3);
 			return;
 		}
-		
 		Graphics g = bs.getDrawGraphics();
 		
 		g.dispose();
 		bs.show();
-	}*/
+	}
 	
 	public static void main(String[] args)
 	{

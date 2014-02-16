@@ -32,7 +32,6 @@ public class Magnus
     
     //Limits Magnus to a double jump
     public int jumpLimit = 2;
-    public int jumpLimitReset;
     
     //Gravity Vars
     static int acceleration = 1;
@@ -109,20 +108,21 @@ public class Magnus
             System.out.println("Right key pressed");
         }
 
-        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
+        if (key == KeyEvent.VK_UP)
         {
-            if (jumpLimit <= 2)
-        	{
-            	dy = -15;
-        	}
-            
-            System.out.println("Up key or Space bar pressed");
+            dy = -15;
+            System.out.println("Up key pressed");
         }
 
         if (key == KeyEvent.VK_DOWN)
         {
             dy = 1;
             System.out.println("Down key pressed");
+        }
+        if (key == KeyEvent.VK_SPACE)
+        {
+        	dy = -15;
+        	System.out.println("Space bar pressed");
         }
     }
 
@@ -142,7 +142,7 @@ public class Magnus
             dx = 0;
         }
 
-        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
+        if (key == KeyEvent.VK_UP)
         {
             dy = 0;
         }
@@ -150,6 +150,10 @@ public class Magnus
         if (key == KeyEvent.VK_DOWN)
         {
             dy = 0;
+        }
+        if (key == KeyEvent.VK_SPACE)
+        {
+        	dy = 0;
         }
     }
 }

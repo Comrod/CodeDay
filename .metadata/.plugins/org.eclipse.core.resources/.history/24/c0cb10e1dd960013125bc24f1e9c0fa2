@@ -139,7 +139,7 @@ public class Main implements Runnable
 		}
 	}
 	
-	/*public void render()
+	public void render()
 	{
 		BufferStrategy bs = getBufferStrategy();
 		if (bs == null)
@@ -150,9 +150,15 @@ public class Main implements Runnable
 		
 		Graphics g = bs.getDrawGraphics();
 		
+		//g.setColor(Color.BLACK);
+		g.fillRect(0, 0, getWidth(), getHeight());
+		
+		
+		g.drawImage(Magnus.image, (WIDTH*SCALE/2), (HEIGHT*SCALE/2), null);
+		
 		g.dispose();
 		bs.show();
-	}*/
+	}
 	
 	public static void main(String[] args)
 	{

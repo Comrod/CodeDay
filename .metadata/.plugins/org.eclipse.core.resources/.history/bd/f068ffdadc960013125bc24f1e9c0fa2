@@ -111,11 +111,7 @@ public class Magnus
 
         if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
         {
-            if (jumpLimit <= 2)
-        	{
-            	dy = -15;
-        	}
-            
+            dy = -15;
             System.out.println("Up key or Space bar pressed");
         }
 
@@ -142,7 +138,7 @@ public class Magnus
             dx = 0;
         }
 
-        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
+        if (key == KeyEvent.VK_UP)
         {
             dy = 0;
         }
@@ -150,6 +146,10 @@ public class Magnus
         if (key == KeyEvent.VK_DOWN)
         {
             dy = 0;
+        }
+        if (key == KeyEvent.VK_SPACE)
+        {
+        	dy = 0;
         }
     }
 }

@@ -87,6 +87,9 @@ public class Main implements Runnable
 			lastTime = now;
 			boolean shouldRender = true;
 			
+			long time = System.currentTimeMillis();
+			time = (1000 / 60) - (System.currentTimeMillis() - time);
+			
 			while(delta >= 1)
 			{
 				ticks ++;
