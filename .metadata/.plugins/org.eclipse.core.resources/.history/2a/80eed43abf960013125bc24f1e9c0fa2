@@ -16,8 +16,7 @@ public class Magnus
     
     static int moveDirection = 0;
     
-    public static BufferedImage magnusStillRight;
-    public static BufferedImage magnusStillLeft;
+    public static BufferedImage manusStillRight;
     public static BufferedImage magnusRight;
     public static BufferedImage magnusLeft;
     public static BufferedImage frameRight;
@@ -26,8 +25,7 @@ public class Magnus
     public Magnus()
     {
     	try {
-    		magnusStillRight = ImageIO.read(new URL("http://i.imgur.com/u8cXxLM.png"));
-    		magnusStillLeft = ImageIO.read(new URL("http://i.imgur.com/fFFh0vo.png"));
+    		manusStillRight = ImageIO.read(new URL("http://i.imgur.com/u8cXxLM.png"));
     		magnusRight = ImageIO.read(new URL("http://i.imgur.com/6hxdzAt.png"));
     		magnusLeft = ImageIO.read(new URL("http://i.imgur.com/TcjDPzV.png"));
     	} catch (IOException e) {
@@ -59,7 +57,7 @@ public class Magnus
     
     public BufferedImage getImage()
     {
-    	return magnusStillRight;
+    	return manusStillRight;
     }
     
     public void keyPressed(KeyEvent e)
