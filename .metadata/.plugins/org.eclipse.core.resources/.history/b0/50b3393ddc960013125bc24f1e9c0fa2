@@ -100,7 +100,6 @@ public class Main implements Runnable
 				else
 				{
 					Magnus.dy = 0;
-					Magnus.y = Platform.yPos - 130;
 				}
 			}
 			

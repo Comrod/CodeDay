@@ -30,8 +30,6 @@ public class Magnus
     static int WIDTH = 30;
     static int HEIGHT = 130;
     
-    public int jumpLimit = 2;
-    
     //Gravity Vars
     static int acceleration = 1;
     static int gravitySpeed = 1;

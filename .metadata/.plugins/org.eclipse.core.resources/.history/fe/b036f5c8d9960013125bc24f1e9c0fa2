@@ -23,7 +23,7 @@ public class Main implements Runnable
 	public int tickCount = 0;
 	public static int ticks = 0;
 	public boolean running = false;
-	public static boolean gravityOnOff = true;
+	public static boolean gravityOnOff;
 	
 	//Rendering
 	private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
@@ -93,15 +93,7 @@ public class Main implements Runnable
 				shouldRender = true;
 				
 				//Gravity
-				if (Magnus.y < Platform.yPos - 130)
-				{
-					Magnus.dy += 1;
-				}
-				else
-				{
-					Magnus.dy = 0;
-					Magnus.y = Platform.yPos - 130;
-				}
+				Magnus.dy = 1;
 			}
 			
 			try {

@@ -33,8 +33,6 @@ public class Platform
     	}
 		
 		platformMovement();
-		System.out.println("Platform() run");
-		
 	}
 	
 	public void platformMovement()

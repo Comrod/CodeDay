@@ -93,14 +93,13 @@ public class Main implements Runnable
 				shouldRender = true;
 				
 				//Gravity
-				if (Magnus.y < Platform.yPos - 130)
+				if (Magnus.y < Platform.yPos)
 				{
-					Magnus.dy += 1;
+					Magnus.dy = 1;
 				}
 				else
 				{
 					Magnus.dy = 0;
-					Magnus.y = Platform.yPos - 130;
 				}
 			}
 			

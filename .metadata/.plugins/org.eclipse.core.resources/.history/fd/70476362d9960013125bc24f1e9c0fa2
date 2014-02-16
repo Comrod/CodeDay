@@ -31,10 +31,6 @@ public class Platform
     	} catch (IOException e) {
     		e.printStackTrace();
     	}
-		
-		platformMovement();
-		System.out.println("Platform() run");
-		
 	}
 	
 	public void platformMovement()

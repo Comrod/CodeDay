@@ -31,10 +31,6 @@ public class Platform
     	} catch (IOException e) {
     		e.printStackTrace();
     	}
-		
-		platformMovement();
-		System.out.println("Platform() run");
-		
 	}
 	
 	public void platformMovement()
@@ -45,7 +41,6 @@ public class Platform
 		if (platformBounds.intersects(Magnus.getBounds()))
 		{
 			Magnus.y = yPos - 130;
-			System.out.println("Intersection");
 		}
 		
 		if (xPos <= 0 - WIDTH)

@@ -32,9 +32,7 @@ public class Platform
     		e.printStackTrace();
     	}
 		
-		platformMovement();
-		System.out.println("Platform() run");
-		
+		platformMovement
 	}
 	
 	public void platformMovement()
