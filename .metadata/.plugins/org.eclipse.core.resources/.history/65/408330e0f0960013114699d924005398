@@ -22,7 +22,7 @@ public class Platform
 	static int xPos;
 	static int yPos = rand.nextInt(Main.HEIGHT - 400) + 1;
 	
-	static int platformSpeed = -4;
+	static int platformSpeed = -3;
 	
 	
 	Platform()

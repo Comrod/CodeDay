@@ -48,7 +48,7 @@ public class Game extends JPanel implements ActionListener
         requestFocusInWindow();
         
         magnus = new Magnus();
-        platform = new Platform();
+        platform = new Platform(int);
         
         
         //Game Timer

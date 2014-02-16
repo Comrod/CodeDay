@@ -12,7 +12,7 @@ public class Platform
 {
 	public static BufferedImage platform;
 	
-	static Random rand = new Random();
+	Random rand = new Random();
 	
 	//Sets dimensions of platform
 	int WIDTH = 338;
@@ -20,10 +20,13 @@ public class Platform
 	
 	//Sets position of platform
 	static int xPos;
-	static int yPos = rand.nextInt(Main.HEIGHT - 400) + 1;
+	static int yPos = 530;
+	static int xPos2;
+	static int yPos2;
+	static int xPos3;
+	static int yPos3;
 	
-	static int platformSpeed = -4;
-	
+	static int platformSpeed = -3;
 	
 	Platform()
 	{	
@@ -35,6 +38,7 @@ public class Platform
 		
 		platformMovement();
 		System.out.println("Platform() run");
+		
 	}
 	
 	void onSolidGround()
@@ -54,11 +58,10 @@ public class Platform
 	
 	public void platformMovement()
 	{
-		xPos += platformSpeed;
+		xPos += platformSpeed;	
 		if (xPos <= 0 - WIDTH)
 		{
 			xPos = Main.WIDTH;
-			yPos = rand.nextInt(Main.HEIGHT - 400) + 1;
 		}
 		System.out.println("Platforms are moving");
 	}

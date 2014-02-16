@@ -22,10 +22,10 @@ public class Platform
 	static int xPos;
 	static int yPos = rand.nextInt(Main.HEIGHT - 400) + 1;
 	
-	static int platformSpeed = -4;
+	static int platformSpeed = -3;
 	
 	
-	Platform()
+	Platform(int i)
 	{	
 		try {
     		platform = ImageIO.read(new URL("http://i.imgur.com/ZfV0mGS.png"));
@@ -34,7 +34,10 @@ public class Platform
     	}
 		
 		platformMovement();
-		System.out.println("Platform() run");
+		System.out.println("Platform() run");	
+	
+		this.xPos = i;
+		
 	}
 	
 	void onSolidGround()

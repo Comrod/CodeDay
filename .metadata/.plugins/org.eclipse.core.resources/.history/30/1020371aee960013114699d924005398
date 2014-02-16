@@ -104,7 +104,6 @@ public class Game extends JPanel implements ActionListener
 			g.drawImage(Magnus.frameLeft, magnus.getX(), magnus.getY(), this);
 		}
 		
-		//Platforms
 		g.drawImage(Platform.platform, Platform.xPos, Platform.yPos, null);
 		
 	}

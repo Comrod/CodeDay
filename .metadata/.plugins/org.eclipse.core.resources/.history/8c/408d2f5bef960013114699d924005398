@@ -22,8 +22,7 @@ public class Platform
 	static int xPos;
 	static int yPos = rand.nextInt(Main.HEIGHT - 400) + 1;
 	
-	static int platformSpeed = -4;
-	
+	static int platformSpeed = -3;
 	
 	Platform()
 	{	
@@ -34,7 +33,7 @@ public class Platform
     	}
 		
 		platformMovement();
-		System.out.println("Platform() run");
+		System.out.println("Platform() run");	
 	}
 	
 	void onSolidGround()
@@ -58,7 +57,6 @@ public class Platform
 		if (xPos <= 0 - WIDTH)
 		{
 			xPos = Main.WIDTH;
-			yPos = rand.nextInt(Main.HEIGHT - 400) + 1;
 		}
 		System.out.println("Platforms are moving");
 	}
