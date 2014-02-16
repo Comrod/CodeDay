@@ -14,8 +14,6 @@ public class Magnus
     private int x;
     private int y;
     
-    public static int determineDirection;
-    
     public static BufferedImage magnusStill;
     public static BufferedImage magnusRight;
     
@@ -23,6 +21,11 @@ public class Magnus
     {
     	try {
     		magnusStill = ImageIO.read(new URL("http://i.imgur.com/u8cXxLM.png"));
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	}
+    	
+    	try {
     		magnusRight = ImageIO.read(new URL("http://i.imgur.com/6hxdzAt.png"));
     	} catch (IOException e) {
     		e.printStackTrace();
@@ -63,14 +66,12 @@ public class Magnus
         if (key == KeyEvent.VK_LEFT)
         {
             dx = -1;
-            determineDirection = 1;
             System.out.println("Left button pressed");
         }
 
         if (key == KeyEvent.VK_RIGHT)
         {
             dx = 1;
-            determineDirection = 2;
             System.out.println("Right button pressed");
         }
 
