@@ -59,7 +59,7 @@ public class Game extends JPanel implements ActionListener
         Timer animationTimerRight = new Timer(250, new ActionListener(){	
             public void actionPerformed(ActionEvent e) {
             	movingRight = !movingRight;
-                Magnus.frameRight = movingRight ? Magnus.magnusStill : Magnus.magnusRight;
+                Magnus.frame = movingRight ? Magnus.magnusStill : Magnus.magnusRight;
                 repaint();
             }
         });
@@ -70,8 +70,8 @@ public class Game extends JPanel implements ActionListener
     	//Animation Timer Left
         Timer animationTimerLeft = new Timer(250, new ActionListener(){	
             public void actionPerformed(ActionEvent e) {
-            	movingLeft = !movingLeft;
-                Magnus.frameLeft = movingLeft ? Magnus.magnusStill : Magnus.magnusLeft;
+            	movingRight = !movingRight;
+                Magnus.frame = movingRight ? Magnus.magnusStill : Magnus.magnusRight;
                 repaint();
             }
         });
@@ -96,12 +96,11 @@ public class Game extends JPanel implements ActionListener
 		else if (Magnus.moveDirection == 1)
 		{
 			//Moving Right
-			g.drawImage(Magnus.frameRight, magnus.getX(), magnus.getY(), this);
+			g.drawImage(Magnus.frame, magnus.getX(), magnus.getY(), this);
 		}
 		else if (Magnus.moveDirection == 2)
 		{
 			//Moving Left
-			g.drawImage(Magnus.frameLeft, magnus.getX(), magnus.getY(), this);
 		}
 	}
 	

@@ -19,8 +19,7 @@ public class Magnus
     public static BufferedImage magnusStill;
     public static BufferedImage magnusRight;
     public static BufferedImage magnusLeft;
-    public static BufferedImage frameRight;
-    public static BufferedImage frameLeft;
+    public static BufferedImage frame;
     
     public Magnus()
     {
