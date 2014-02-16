@@ -30,6 +30,10 @@ public class Magnus
     static int WIDTH = 30;
     static int HEIGHT = 130;
     
+    //Limits Magnus to a double jump
+    public int jumpLimit = 2;
+    public int jumpLimitReset;
+    
     public Magnus()
     {
     	//Set Textures

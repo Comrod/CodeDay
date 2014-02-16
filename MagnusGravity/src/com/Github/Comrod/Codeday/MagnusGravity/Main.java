@@ -9,7 +9,6 @@ import java.util.*;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 
 //import com.Github.Comrod.CodeDay.GravityGame.Magnus;
 
@@ -21,10 +20,10 @@ public class Main implements Runnable
 	static int WIDTH = 1200;
 	static int HEIGHT = 800;
 	
-	public static JLabel scoreLabel = new JLabel();
+	public static JLabel label = new JLabel();
 	
-	public static double tickCount = 0;
-	public static double ticks = 0;
+	public static int tickCount = 0;
+	public static int ticks = 0;
 	public boolean running = false;
 	public static boolean gravityOnOff = true;
 	
@@ -41,7 +40,12 @@ public class Main implements Runnable
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		frame.setResizable(false);
-		
+		frame.add(label);
+			
+		label.setVisible(true);
+		label.setText("Stuff");
+		label.setLocation(80, 80);
+		label.setSize(10, 30);
 	}
 	
 	public synchronized void start()
@@ -57,8 +61,9 @@ public class Main implements Runnable
 
 	@Override
 	public void run()
-	{
+	{	
 		final Game game = new Game();
+		final Magnus magnus = new Magnus();
 		final Platform platform = new Platform();
 		
 		//Frame
@@ -66,14 +71,6 @@ public class Main implements Runnable
 		game.setVisible(true);
 		frame.revalidate();
 		frame.repaint();
-		
-		//Score Label
-		frame.add(scoreLabel);
-		scoreLabel.setVisible(true);
-		scoreLabel.setLocation(100, 700);
-		scoreLabel.setSize(10, 30);
-		scoreLabel.setFocusable(true);
-		
 		System.out.println("Game started");
 		
 		long lastTime = System.nanoTime();
@@ -105,9 +102,7 @@ public class Main implements Runnable
 				platform.platformMovement();
 				
 				//Increase Difficulty
-				game.increaseDifficulty();
-				
-				scoreLabel.setText("Score: " + Game.score);
+				//game.increaseDifficulty();
 			}
 			
 			try {

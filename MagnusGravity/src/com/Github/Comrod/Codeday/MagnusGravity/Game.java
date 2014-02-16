@@ -1,6 +1,5 @@
 package com.Github.Comrod.Codeday.MagnusGravity;
 
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -30,9 +29,6 @@ public class Game extends JPanel implements ActionListener
 	private boolean movingRight = true;
 	private boolean movingLeft = true;
 	
-	//Score
-	public static int score = 0;
-	
 	Timer timer;
 	Magnus magnus;
 	Platform platform;
@@ -56,6 +52,7 @@ public class Game extends JPanel implements ActionListener
         
         magnus = new Magnus();
         platform = new Platform();
+        
         
         //Game Timer
         timer = new Timer(5, this);
@@ -112,17 +109,14 @@ public class Game extends JPanel implements ActionListener
 		
 		g.drawImage(Platform.platform, Platform.xPos, Platform.yPos, null);
 		
-		g.setFont(new Font("Helvetica", Font.BOLD, 30));
-		g.drawString("Score: " + score, 550, 150);
-		
 	}
 	
 	void increaseDifficulty()
 	{;
-		double foo = -0.05;
-		Platform.platformSpeed = (float) (foo + Platform.platformSpeed);
-		Magnus.dy = (float) ((-foo) + Magnus.dy);
-		System.out.println("Difficulty Level: " + (-foo));
+		int randInt = rand.nextInt(3) + 1;
+		System.out.println("Difficulty Level: " + randInt);
+		Platform.platformSpeed = randInt + Platform.platformSpeed;
+		Magnus.dy = randInt + Magnus.dy;
 	}
 	
 	public void actionPerformed(ActionEvent e)
@@ -152,11 +146,12 @@ public class Game extends JPanel implements ActionListener
 
 	        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
 	        {
-	        	Platform.jumpLimitReset++;
-	        	if (Platform.jumpLimitReset < 3)
+	            /*if (jumpLimit <= 2)
 	        	{
-	        		Magnus.dy = -5;
-	        	}
+	            	dy = -15;
+	        	}*/
+	        	Magnus.dy = -10;
+	        	
 	            System.out.println("Up key or Space bar pressed");
 	        }
 	    }
@@ -179,7 +174,7 @@ public class Game extends JPanel implements ActionListener
 
 	        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
 	        {
-	        	Magnus.dy = (float) 1;	
+	        	Magnus.dy = (float) 1;
 	        }
 	    }
 }

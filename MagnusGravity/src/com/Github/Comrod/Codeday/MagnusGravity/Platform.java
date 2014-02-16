@@ -22,11 +22,8 @@ public class Platform
 	static int xPos;
 	static int yPos = 530;
 	
-	static float platformSpeed = (float) -3;
+	static float platformSpeed = (float) -1;
 	
-	//Limits Magnus to a double jump
-	public static int jumpLimitReset = 0;
-    
 	Platform()
 	{	
 		try {
@@ -36,7 +33,8 @@ public class Platform
     	}
 		
 		platformMovement();
-		System.out.println("Platform() run");	
+		System.out.println("Platform() run");
+		
 	}
 	
 	void onSolidGround()
@@ -46,10 +44,6 @@ public class Platform
 		{
 			Magnus.dy = 0;
 			System.out.println("On solid ground");
-			
-			//Resets Jump Limit when Magnus touches a platform
-			jumpLimitReset = 0;
-			Game.score++;
 		}
 		else
 		{
