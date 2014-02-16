@@ -57,6 +57,14 @@ public class Magnus
     	y = 200;
     }
     
+    public void gravity()
+    {
+    	/*while (Main.ticks < 30)
+    	{
+    		dy = 1;
+    	}*/
+    }
+    
     public void move()
     {
     	x += dx;

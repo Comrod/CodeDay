@@ -1,0 +1,22 @@
+package com.Github.Comrod.Codeday.MagnusGravity;
+
+import java.awt.image.BufferedImage;
+
+import javax.swing.JPanel;
+
+public class Game extends JPanel
+{
+	//Frame Width and Height
+	static int WIDTH = 600;
+	static int HEIGHT = 400;
+	
+	Magnus magnus = new Magnus();
+	
+	//Get Background
+	BufferedImage background = null;
+	
+	public Game()
+	{
+		
+	}
+}

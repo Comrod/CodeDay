@@ -1,0 +1,12 @@
+package com.Github.Comrod.Codeday.MagnusGravity;
+
+public class Main {
+	
+	public static void main(String[] args)
+	{
+		
+	}
+	
+	static JFrame frame = new JFrame();
+
+}

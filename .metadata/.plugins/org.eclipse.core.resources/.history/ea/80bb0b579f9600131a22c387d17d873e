@@ -1,0 +1,107 @@
+package com.Github.Comrod.Codeday.MagnusGravity;
+
+import java.awt.Image;
+import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.imageio.ImageIO;
+
+public class Magnus
+{
+
+	private int dx;
+	private int dy;
+    private int x;
+    private int y;
+    
+    private BufferedImage magnus;
+    
+    public Magnus()
+    {
+    	try {
+			magnus = ImageIO.read(new URL("http://i.imgur.com/q8mVdL2.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    	System.out.println("Gotten Magnus");
+
+    	//Set Position
+    	x = 40;
+    	y = 60;
+    }
+    
+    public void move()
+    {
+    	x += dx;
+    	y += dy;
+    }
+	
+    public int getX()
+    {
+    	return x;
+    }
+    
+    public int getY()
+    {
+    	return y;
+    }
+    
+    public BufferedImage getImage()
+    {
+    	return magnus;
+    }
+    
+    public void keyPressed(KeyEvent e)
+    {
+
+        int key = e.getKeyCode();
+
+        if (key == KeyEvent.VK_LEFT)
+        {
+            dx = -1;
+        }
+
+        if (key == KeyEvent.VK_RIGHT)
+        {
+            dx = 1;
+        }
+
+        if (key == KeyEvent.VK_UP)
+        {
+            dy = -1;
+        }
+
+        if (key == KeyEvent.VK_DOWN)
+        {
+            dy = 1;
+        }
+    }
+
+    public void keyReleased(KeyEvent e)
+    {
+        int key = e.getKeyCode();
+
+        if (key == KeyEvent.VK_LEFT)
+        {
+            dx = 0;
+        }
+
+        if (key == KeyEvent.VK_RIGHT)
+        {
+            dx = 0;
+        }
+
+        if (key == KeyEvent.VK_UP)
+        {
+            dy = 0;
+        }
+
+        if (key == KeyEvent.VK_DOWN)
+        {
+            dy = 0;
+        }
+    }
+}

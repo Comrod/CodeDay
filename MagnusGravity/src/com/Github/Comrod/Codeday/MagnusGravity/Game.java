@@ -22,8 +22,6 @@ public class Game extends JPanel implements ActionListener
 {
 	private static final long serialVersionUID = 1L;
 	
-	public static BufferedImage background;
-	
 	//For Walking Animation
 	private boolean movingRight = true;
 	private boolean movingLeft = true;
@@ -31,10 +29,15 @@ public class Game extends JPanel implements ActionListener
 	Timer timer;
 	Magnus magnus;
 	Platform platform;
-	Frame frame;
 	
 	//Get Background
-	
+	BufferedImage background = null;{
+		try {
+			background = ImageIO.read(new URL("http://i.imgur.com/9hKYPfK.png"));
+			System.out.println("Gotten Background");
+		} catch (IOException e) {
+			System.out.println("Incorrect Background");
+		}}
 	
 	public Game()
 	{
@@ -46,14 +49,7 @@ public class Game extends JPanel implements ActionListener
         
         magnus = new Magnus();
         platform = new Platform();
-        frame = new Frame();
         
-        try {
-			background = ImageIO.read(new URL("http://i.imgur.com/9hKYPfK.png"));
-			System.out.println("Gotten Background");
-		} catch (IOException e) {
-			System.out.println("Incorrect Background");
-		}
         
         //Game Timer
         timer = new Timer(5, this);
@@ -86,6 +82,32 @@ public class Game extends JPanel implements ActionListener
         System.out.println("Game Intialized");
 	}
 	
+	public void paint(Graphics g)
+	{
+		super.paint(g);
+		//System.out.println("Graphics Painted");
+		g.drawImage(background, 0, 0, null);
+		
+		if (Magnus.moveDirection == 0)
+		{
+			//Not moving
+			g.drawImage(Magnus.magnusStillRight, magnus.getX(), magnus.getY(), this);
+		}
+		else if (Magnus.moveDirection == 1)
+		{
+			//Moving Right
+			g.drawImage(Magnus.frameRight, magnus.getX(), magnus.getY(), this);
+		}
+		else if (Magnus.moveDirection == 2)
+		{
+			//Moving Left
+			g.drawImage(Magnus.frameLeft, magnus.getX(), magnus.getY(), this);
+		}
+		
+		g.drawImage(Platform.platform, Platform.xPos, Platform.yPos, null);
+		
+	}
+	
 	public void actionPerformed(ActionEvent e)
 	{
 		magnus.move();
@@ -93,14 +115,15 @@ public class Game extends JPanel implements ActionListener
 	}
 	
 	private class TAdapter extends KeyAdapter
-	{	
+	{
 		public void keyReleased(KeyEvent e)
         {
             magnus.keyReleased(e);
         }
+		
 		public void keyPressed(KeyEvent e)
         {
-			magnus.keyPressed(e);
+            magnus.keyPressed(e);
             System.out.println("Key Pressed");
         }
 		
