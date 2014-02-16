@@ -1,0 +1,30 @@
+package platformer.Entity;
+
+import java.awt.event.KeyEvent;
+
+import javax.swing.JFrame;
+
+public class Frame extends JFrame
+{
+	public Frame()
+	{
+	addKeyListener(new KeyListener()
+	{
+		public void keyReleased(KeyEvent e)
+        {
+            magnus.keyReleased(e);
+        }
+		
+		public void stuff()
+		{
+			System.out.println("Stuff");
+		}
+		
+		public void keyPressed(KeyEvent e)
+        {
+            magnus.keyPressed(e);
+            System.out.println("Key Pressed");
+        }
+	});
+	}
+}

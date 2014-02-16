@@ -1,0 +1,43 @@
+package com.Github.Comrod.Codeday.MagnusGravity;
+
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import javax.swing.JFrame;
+
+public class Frame extends JFrame implements ActionListener
+{
+	
+	Magnus magnus;
+	
+	public Frame()
+	{
+		
+		addKeyListener(new KeyListener()
+		{
+			public void keyReleased(KeyEvent e)
+			{
+				magnus.keyReleased(e);
+			}
+		
+			public void stuff()
+			{
+				System.out.println("Stuff");
+			}
+		
+			public void keyPressed(KeyEvent e)
+			{
+				magnus.keyPressed(e);
+				System.out.println("Key Pressed");
+			}
+
+			@Override
+			public void keyTyped(KeyEvent e)
+			{
+				// TODO Auto-generated method stub
+				
+			}
+		});
+	}
+}
