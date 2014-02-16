@@ -38,6 +38,15 @@ public class Platform
 		System.out.println("Platform() run");
 	}
 	
+	void noPlatOverlap()
+	{
+		Rectangle platformBounds = new Rectangle(xPos, yPos, WIDTH, HEIGHT);
+		while (platformBounds.intersects(platformBounds))
+		{
+			xPos = rand.nextInt(1000) + 200;
+		}
+	}
+	
 	void onSolidGround()
 	{
 		Rectangle platformBounds = new Rectangle(xPos, yPos, WIDTH, HEIGHT);
@@ -56,6 +65,7 @@ public class Platform
 			{
 				Magnus.dy = 0;
 			}
+			System.out.println("Not on solid ground");
 		}
 	}
 	
@@ -72,6 +82,7 @@ public class Platform
 			xPos = rand.nextInt(1000) + 1;
 			yPos = rand.nextInt(800) + 600;
 		}
+		System.out.println("Platforms are moving");
 	}
 	
 }

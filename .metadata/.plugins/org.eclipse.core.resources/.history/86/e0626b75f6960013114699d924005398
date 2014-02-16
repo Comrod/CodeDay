@@ -34,6 +34,9 @@ public class Magnus
     public int jumpLimit = 2;
     public int jumpLimitReset;
     
+    //Gravity Vars
+    //static int gravitySpeed = 1;
+    
     public Magnus()
     {
     	//Set Textures
@@ -49,8 +52,8 @@ public class Magnus
     	System.out.println("Gotten Magnus");
 
     	//Set Position
-    	x = 100;
-    	y = 100;
+    	x = 40;
+    	y = 200;
     }
     
     public void gravity()
@@ -109,7 +112,7 @@ public class Magnus
         {
             if (jumpLimit <= 2)
         	{
-            	dy = -2;
+            	dy = -15;
         	}
             
             System.out.println("Up key or Space bar pressed");

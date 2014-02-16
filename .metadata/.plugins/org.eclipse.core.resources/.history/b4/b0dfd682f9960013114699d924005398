@@ -56,6 +56,7 @@ public class Platform
 			{
 				Magnus.dy = 0;
 			}
+			System.out.println("Not on solid ground");
 		}
 	}
 	
@@ -72,6 +73,7 @@ public class Platform
 			xPos = rand.nextInt(1000) + 1;
 			yPos = rand.nextInt(800) + 600;
 		}
+		System.out.println("Platforms are moving");
 	}
 	
 }
