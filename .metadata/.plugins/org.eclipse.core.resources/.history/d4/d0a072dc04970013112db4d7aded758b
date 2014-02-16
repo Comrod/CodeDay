@@ -47,7 +47,7 @@ public class Platform
 		}
 		else
 		{
-			Magnus.dy += 0.01;
+			Magnus.dy += 1;
 			System.out.println("Not on solid ground");
 		}
 	}

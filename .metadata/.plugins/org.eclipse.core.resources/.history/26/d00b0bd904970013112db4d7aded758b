@@ -12,7 +12,7 @@ public class Magnus
 {
 	//Vars for placement of Magnus
 	public static int dx;
-	public static float dy;
+	public static int dy;
     public static int x;
     public static int y;
     
@@ -79,6 +79,11 @@ public class Magnus
     public int getY()
     {
     	return y;
+    }
+    
+    public BufferedImage getImage()
+    {
+    	return magnusStillRight;
     }
     
     public static Rectangle getBounds()

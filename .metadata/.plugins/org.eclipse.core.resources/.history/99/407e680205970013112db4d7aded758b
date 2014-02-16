@@ -81,6 +81,11 @@ public class Magnus
     	return y;
     }
     
+    public BufferedImage getImage()
+    {
+    	return magnusStillRight;
+    }
+    
     public static Rectangle getBounds()
     {
     	return new Rectangle(x, y, WIDTH, HEIGHT);

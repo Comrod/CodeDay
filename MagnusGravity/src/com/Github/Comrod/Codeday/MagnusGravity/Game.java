@@ -41,7 +41,7 @@ public class Game extends JPanel implements ActionListener
 	
 	public Game()
 	{
-		addKeyListener(new TAdapter());
+		addKeyListener(new KeyInput(this));
 		
 		setFocusable(true);
         setDoubleBuffered(true);
@@ -114,18 +114,66 @@ public class Game extends JPanel implements ActionListener
 		repaint();
 	}
 	
-	private class TAdapter extends KeyAdapter
-	{
-		public void keyReleased(KeyEvent e)
-        {
-            magnus.keyReleased(e);
-        }
-		
-		public void keyPressed(KeyEvent e)
-        {
-            magnus.keyPressed(e);
-            System.out.println("Key Pressed");
-        }
-		
-    }
+	 public void keyPressed(KeyEvent e)
+	    {
+	        int key = e.getKeyCode();
+
+	        if (key == KeyEvent.VK_LEFT)
+	        {
+	            Magnus.moveDirection = 2;
+	        	Magnus.dx = -1;
+	            System.out.println("Left key pressed");
+	        }
+
+	        if (key == KeyEvent.VK_RIGHT)
+	        {
+	            Magnus.moveDirection = 1;
+	            Magnus.dx = 1;
+	            System.out.println("Right key pressed");
+	        }
+
+	        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
+	        {
+	            /*if (jumpLimit <= 2)
+	        	{
+	            	dy = -15;
+	        	}*/
+	        	Magnus.dy = -10;
+	        	
+	            System.out.println("Up key or Space bar pressed");
+	        }
+
+	        if (key == KeyEvent.VK_DOWN)
+	        {
+	        	Magnus.dy = 1;
+	            System.out.println("Down key pressed");
+	        }
+	    }
+
+	    public void keyReleased(KeyEvent e)
+	    {
+	    	System.out.println("Key event initialized");
+	        int key = e.getKeyCode();
+	        //moveDirection = 0;
+	        
+	        if (key == KeyEvent.VK_LEFT)
+	        {
+	        	Magnus.dx = 0;
+	        }
+
+	        if (key == KeyEvent.VK_RIGHT)
+	        {
+	        	Magnus.dx = 0;
+	        }
+
+	        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_SPACE)
+	        {
+	        	Magnus.dy = 0;
+	        }
+
+	        if (key == KeyEvent.VK_DOWN)
+	        {
+	        	Magnus.dy = 0;
+	        }
+	    }
 }

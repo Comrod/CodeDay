@@ -13,10 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="image" key="selection"/>
+		<item value="buffer" key="selection"/>
 		<list key="findhistory">
-			<item value="image"/>
-			<item value="up"/>
+			<item value="buffer"/>
+			<item value="game1"/>
+			<item value="game"/>
+			<item value="acceleration"/>
+			<item value="platformmovement"/>
+			<item value="platform"/>
+			<item value="height"/>
+			<item value="magnus"/>
 		</list>
 		<list key="replacehistory">
 		</list>

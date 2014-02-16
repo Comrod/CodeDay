@@ -42,8 +42,6 @@ public class Magnus
     {
     	//Set Textures
     	try {
-    		magnusStillRight = ImageIO.read(new URL("http://i.imgur.com/u8cXxLM.png"));
-    		magnusStillLeft = ImageIO.read(new URL("http://i.imgur.com/fFFh0vo.png"));
     		magnusRight = ImageIO.read(new URL("http://i.imgur.com/6hxdzAt.png"));
     		magnusLeft = ImageIO.read(new URL("http://i.imgur.com/TcjDPzV.png"));
     	} catch (IOException e) {
@@ -79,6 +77,11 @@ public class Magnus
     public int getY()
     {
     	return y;
+    }
+    
+    public BufferedImage getImage()
+    {
+    	return magnusStillRight;
     }
     
     public static Rectangle getBounds()
