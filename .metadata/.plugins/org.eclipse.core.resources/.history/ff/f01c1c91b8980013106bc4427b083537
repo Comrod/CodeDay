@@ -39,6 +39,7 @@ public class Game extends JPanel implements ActionListener
 	
 	public Game()
 	{
+		addKeyListener(new KeyInput(this));
 		
 		setFocusable(true);
         setDoubleBuffered(true);
@@ -76,14 +77,11 @@ public class Game extends JPanel implements ActionListener
     	animationTimerLeft.setCoalesce(true);
     	animationTimerLeft.start();
         
-    	addKeyListener(new KeyInput(this));
-    	
         System.out.println("Game Intialized");
 	}
 	
 	public void paint(Graphics g)
 	{
-		
 		super.paint(g);
 		//System.out.println("Graphics Painted");
 		g.drawImage(background, 0, 0, null);

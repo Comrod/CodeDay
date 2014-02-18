@@ -76,8 +76,6 @@ public class Game extends JPanel implements ActionListener
     	animationTimerLeft.setCoalesce(true);
     	animationTimerLeft.start();
         
-    	addKeyListener(new KeyInput(this));
-    	
         System.out.println("Game Intialized");
 	}
 	
